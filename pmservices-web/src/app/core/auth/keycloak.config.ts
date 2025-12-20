@@ -1,27 +1,30 @@
 import { provideAppInitializer } from '@angular/core';
-import Keycloak, { KeycloakConfig, KeycloakInitOptions } from 'keycloak-js';
+import Keycloak from 'keycloak-js';
 import { environment } from '../../../environments/environment';
 
-const config: KeycloakConfig = {
+export const keycloak = new Keycloak({
   url: environment.authUrl,
   realm: environment.keycloakRealm,
   clientId: environment.keycloakClientId,
-};
+});
 
-export const keycloak = new Keycloak(config);
-
-export function provideKeycloakInit() {
-  return provideAppInitializer(() => {
-    // ВАРИАНТ ДЛЯ DEV: не блокируем старт приложения
-    const options: KeycloakInitOptions = {
+async function initKeycloak(): Promise<void> {
+  try {
+    const ok = await keycloak.init({
       onLoad: 'check-sso',
       pkceMethod: 'S256',
       checkLoginIframe: false,
-      silentCheckSsoRedirectUri: window.location.origin + '/assets/silent-check-sso.html',
-    };
+      silentCheckSsoRedirectUri: `${window.location.origin}/assets/silent-check-sso.html`,
+    });
 
-    keycloak.init(options)
-      .then((authenticated) => console.info('[Keycloak] init OK, authenticated =', authenticated))
-      .catch((err) => console.error('[Keycloak] init FAILED', err));
-  });
+    console.info('[Keycloak] init ok:', ok);
+  } catch (e) {
+    console.error('[Keycloak] init failed:', e);
+    // не бросаем ошибку — приложение поднимается даже без Keycloak
+  }
 }
+
+export const KEYCLOAK_PROVIDERS = [
+  provideAppInitializer(() => initKeycloak()),
+];
+

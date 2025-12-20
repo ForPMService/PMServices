@@ -1,13 +1,10 @@
-export const environment: {
-  production: boolean;
-  apiBaseUrl: string;
-  authUrl: string;
-  keycloakRealm: string;
-  keycloakClientId: string;
-} = {
+import type { Environment } from './environment.model';
+
+export const environment = {
   production: true,
-  apiBaseUrl: 'https://api.pmservices.com',   // потом поправим под реальный домен
-  authUrl: 'https://auth.pmservices.com',     // и тут
+  apiBaseUrl: 'https://api.pmservices.com',
+
+  authUrl: 'https://auth.pmservices.com',
   keycloakRealm: 'pmservices',
   keycloakClientId: 'pmservices-spa',
-};
+} satisfies Environment;
