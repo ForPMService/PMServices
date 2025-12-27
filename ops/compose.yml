@@ -33,7 +33,7 @@ services:
       - pmservices-net
 
   db:
-    image: postgres:17.6-bookworm
+    image: postgres:18.1-bookworm
     container_name: pmservices-db
     restart: unless-stopped
     env_file: ./.env
@@ -43,10 +43,10 @@ services:
     ports:
       - "15432:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql
       - ./initdb:/docker-entrypoint-initdb.d:ro
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER}"]
       interval: 5s
       timeout: 3s
       retries: 10
@@ -54,7 +54,7 @@ services:
       - pmservices-net
 
   redis:
-    image: redis:8.2.1-bookworm
+    image: redis:8.4.0-bookworm
     container_name: pmservices-redis
     restart: unless-stopped
     ports:
@@ -64,7 +64,7 @@ services:
       - pmservices-net
 
   keycloak:
-    image: quay.io/keycloak/keycloak:26.2
+    image: quay.io/keycloak/keycloak:26.4.7
     container_name: pmservices-keycloak
     restart: unless-stopped
     env_file: ./.env
@@ -86,9 +86,9 @@ services:
         condition: service_healthy
     networks:
       - pmservices-net
-  
+
   mailpit:
-    image: axllent/mailpit:latest
+    image: axllent/mailpit:v1.28.0
     container_name: pmservices-mailpit
     restart: unless-stopped
     ports:
@@ -98,7 +98,7 @@ services:
       - pmservices-net
 
   web:
-    image: nginx:alpine
+    image: nginx:1.28.1-alpine
     container_name: pmservices-web
     restart: unless-stopped
     volumes:
@@ -107,7 +107,6 @@ services:
       - "4200:80"
     networks:
       - pmservices-net
-  
 
 volumes:
   pgdata:
