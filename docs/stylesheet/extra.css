@@ -1,0 +1,106 @@
+/* PMServices Documentation - Custom Styles */
+
+/* Улучшенный шрифт для кода */
+:root {
+  --md-code-font: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+}
+
+/* Статус-бейджи для модулей */
+.status-badge {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  border-radius: 0.25rem;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-badge--dev {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-badge--planned {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.status-badge--done {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+/* Улучшенные таблицы */
+.md-typeset table:not([class]) {
+  font-size: 0.85rem;
+  border-collapse: collapse;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  font-weight: 600;
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background-color: var(--md-accent-fg-color--transparent);
+}
+
+/* Улучшенные admonitions */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Ссылки на диаграммы */
+.diagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+  background-color: var(--md-code-bg-color);
+  border-radius: 0.25rem;
+  text-decoration: none;
+}
+
+.diagram-link:hover {
+  background-color: var(--md-accent-fg-color--transparent);
+}
+
+/* Quick Start карточки */
+.quickstart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.quickstart-card {
+  padding: 1rem;
+  background-color: var(--md-code-bg-color);
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--md-primary-fg-color);
+}
+
+.quickstart-card h3 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+/* Mermaid диаграммы - центрирование */
+.mermaid {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+/* TOC улучшения */
+.md-nav__link--active {
+  font-weight: 600;
+}
+
+/* Footer скрытие "Made with Material" */
+.md-footer-meta__inner {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,178 @@
+site_name: PMServices Documentation
+site_description: Документация платформы PMServices
+site_author: PMServices Team
+site_url: https://pmservices.github.io/docs/
+
+repo_name: pmservices/pmservices
+repo_url: https://github.com/pmservices/pmservices
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: ru
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Тёмная тема
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Светлая тема
+  
+  features:
+    - navigation.instant        # Мгновенная навигация
+    - navigation.tracking       # URL следит за скроллом
+    - navigation.tabs           # Верхние табы
+    - navigation.tabs.sticky    # Табы остаются при скролле
+    - navigation.sections       # Секции в сайдбаре
+    - navigation.expand         # Развёрнутые папки
+    - navigation.path           # Хлебные крошки
+    - navigation.top            # Кнопка "наверх"
+    - search.suggest            # Подсказки поиска
+    - search.highlight          # Подсветка найденного
+    - content.code.copy         # Копирование кода
+    - content.code.annotate     # Аннотации в коде
+    - content.tabs.link         # Связанные табы
+    - toc.follow                # TOC следит за скроллом
+  
+  icon:
+    repo: fontawesome/brands/github
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+
+plugins:
+  - search:
+      lang: 
+        - ru
+        - en
+  - tags
+
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  
+  # PyMdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/pmservices
+  generator: false
+
+extra_css:
+  - stylesheets/extra.css
+
+# ============================================
+# NAVIGATION
+# ============================================
+nav:
+  - Главная:
+    - Обзор: index.md
+    - Глоссарий: glossary.md
+  
+  - Архитектура:
+    - architecture/index.md
+    - C4 Context: architecture/c4-context.md
+    - C4 Containers: architecture/c4-containers.md
+    - Аутентификация: architecture/auth-overview.md
+    - Безопасность: architecture/security.md
+  
+  - Backend:
+    - backend/index.md
+    - Структура: backend/architecture.md
+    - База данных: backend/database.md
+    - Миграции: backend/migrations.md
+    - События: backend/events.md
+  
+  - Frontend:
+    - frontend/index.md
+    - Архитектура: frontend/architecture.md
+    - OIDC Auth: frontend/auth.md
+    - API клиент: frontend/api.md
+  
+  - Модули:
+    - modules/index.md
+    - IAM:
+      - modules/iam/index.md
+      - Обзор: modules/iam/overview.md
+      - API:
+        - OpenAPI: modules/iam/api/openapi-ref.md
+        - События: modules/iam/api/events.md
+      - Данные:
+        - Схема БД: modules/iam/data/schema.md
+      - UI:
+        - Роуты: modules/iam/ui/routes.md
+        - Страницы: modules/iam/ui/pages.md
+      - Разработка:
+        - План: modules/iam/dev/plan.md
+        - Промпты: modules/iam/dev/prompts.md
+  
+  - Инфраструктура:
+    - infra/index.md
+    - Локальная разработка: infra/local-dev.md
+    - Настройка Keycloak: infra/keycloak-setup.md
+    - Переменные окружения: infra/env-config.md
+    - Observability: infra/observability.md
+    - Email: infra/email.md
+  
+  - ADR:
+    - adr/index.md
+    - "0001: Tenancy Model": adr/0001-tenancy-model.md
+    - "0002: RBAC Placement": adr/0002-rbac-placement.md
+    - "0003: Token Storage": adr/0003-token-storage-spa.md
