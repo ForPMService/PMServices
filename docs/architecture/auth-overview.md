@@ -28,5 +28,5 @@ User → Membership → Organization
 
 ## См. также
 
-- [06-Modules/IAM](../06-Modules/IAM/00-Index.md) — реализация
+- [06-Modules/IAM](../modules/iam/00-Index.md) — реализация
 - [90-ADR/0003-token-storage](../90-ADR/0003-token-storage-spa.md) — решение по токенам

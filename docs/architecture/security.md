@@ -108,5 +108,5 @@ Access-Control-Allow-Credentials: true
 ## См. также
 
 - [03-Auth-Overview](./03-Auth-Overview.md) — аутентификация
-- [06-Modules/IAM](../06-Modules/IAM/00-Index.md) — реализация
+- [06-Modules/IAM](../modules/iam/00-Index.md) — реализация
 - [90-ADR](../90-ADR/README.md) — решения по безопасности

@@ -81,4 +81,4 @@ Mail__From=noreply@pmservices.com
 ## См. также
 
 - [01-Local-Dev](./01-Local-Dev.md) — запуск Mailpit
-- [06-Modules/IAM/01-Overview](../06-Modules/IAM/01-Overview.md) — email сценарии
+- [modules/iam/01-Overview](../modules/iam/01-Overview.md) — email сценарии

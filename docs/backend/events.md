@@ -33,4 +33,4 @@ CREATE TABLE outbox_events (
 
 ## См. также
 
-- [06-Modules/IAM/api/events](../06-Modules/IAM/api/events.md) — события IAM
+- [modules/iam/api/events](../modules/iam/api/events.md) — события IAM

@@ -73,5 +73,5 @@ OpenTelemetry для распределённой трассировки.
 
 ## См. также
 
-- [04-Backend/04-Events](../04-Backend/04-Events.md) — события для аудита
-- [06-Modules/IAM/api/events](../06-Modules/IAM/api/events.md) — IAM события
+- [backend/04-Events](../backend/04-Events.md) — события для аудита
+- [modules/iam/api/events](../modules/iam/api/events.md) — IAM события
