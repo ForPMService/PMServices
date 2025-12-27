@@ -1,4 +1,4 @@
-# IAM Prompts for AI
+﻿# IAM Prompts for AI
 
 > Промпты для генерации кода с помощью ИИ.
 
@@ -12,9 +12,9 @@
 ## Контекст для каждого промпта
 
 При использовании промптов, прикладывать:
-- Этот файл (PROMPTS.md)
+- Этот файл (prompts.md)
 - Relevant schema (`data/schema.md`)
-- Error codes (`01-Overview.md`)
+- Error codes (`overview.md`)
 
 ---
 
@@ -46,3 +46,5 @@ TODO: Добавить промпт для создания RegistrationService
 
 Полные промпты находятся в файле `PROMPTS_2.md` в загруженных документах.
 Перенести сюда после ревью.
+
+

@@ -1,12 +1,12 @@
-# Infrastructure
+﻿# Infrastructure
 
 ## Документы
 
-- [01-Local-Dev](./01-Local-Dev.md) — запуск локально
-- [02-Keycloak-Setup](./02-Keycloak-Setup.md) — настройка Keycloak
-- [03-Env-Config](./03-Env-Config.md) — переменные окружения
-- [05-Observability](./05-Observability.md) — логи, метрики, аудит
-- [06-Email](./06-Email.md) — почта (Mailpit / ESP)
+- [01-Local-Dev](./local-dev.md) — запуск локально
+- [02-Keycloak-Setup](./keycloak-setup.md) — настройка Keycloak
+- [03-Env-Config](./env-config.md) — переменные окружения
+- [05-Observability](./observability.md) — логи, метрики, аудит
+- [06-Email](./email.md) — почта (Mailpit / ESP)
 
 ## Docker Compose
 
@@ -22,3 +22,4 @@
 | Redis | 6379 |
 | Keycloak | 8085 |
 | Mailpit | 8025 |
+

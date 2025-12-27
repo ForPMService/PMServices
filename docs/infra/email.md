@@ -1,4 +1,4 @@
-# Email
+﻿# Email
 
 > Настройки почты для dev и prod.
 
@@ -80,5 +80,6 @@ Mail__From=noreply@pmservices.com
 
 ## См. также
 
-- [01-Local-Dev](./01-Local-Dev.md) — запуск Mailpit
-- [modules/iam/01-Overview](../modules/iam/01-Overview.md) — email сценарии
+- [01-Local-Dev](./local-dev.md) — запуск Mailpit
+- [modules/iam/01-Overview](../modules/iam/overview.md) — email сценарии
+

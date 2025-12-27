@@ -12,13 +12,13 @@
         <meta name="author" content="PMServices Team">
       
       
-        <link rel="canonical" href="https://pmservices.github.io/docs/architecture/c4-context/">
+        <link rel="canonical" href="https://pmservices.github.io/docs/adr/0001-tenancy-model/">
       
       
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../c4-containers/">
+        <link rel="next" href="../0002-rbac-placement/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>C4 Context - PMServices Documentation</title>
+        <title>0001: Tenancy Model - PMServices Documentation</title>
       
     
     
@@ -147,7 +147,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#c4-context" class="md-skip">
+        <a href="#adr0001-tenancy-modelmd" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -183,7 +183,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              C4 Context
+              0001: Tenancy Model
             
           </span>
         </div>
@@ -308,13 +308,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../architecture/" class="md-tabs__link">
           
   
   
@@ -410,11 +408,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../adr/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -598,31 +598,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -640,7 +637,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -658,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../architecture/" class="md-nav__link">
         
   
   
@@ -683,37 +680,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    C4 Context
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../architecture/c4-context/" class="md-nav__link">
         
   
   
@@ -729,59 +699,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Акторы
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Внешние системы
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Диаграмма
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -794,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c4-containers/" class="md-nav__link">
+      <a href="../../architecture/c4-containers/" class="md-nav__link">
         
   
   
@@ -822,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../auth-overview/" class="md-nav__link">
+      <a href="../../architecture/auth-overview/" class="md-nav__link">
         
   
   
@@ -850,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../security/" class="md-nav__link">
+      <a href="../../architecture/security/" class="md-nav__link">
         
   
   
@@ -2136,28 +2053,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -2175,7 +2095,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2193,7 +2113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../adr/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -2218,10 +2138,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../adr/0001-tenancy-model/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2237,6 +2166,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -2249,7 +2179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../adr/0002-rbac-placement/" class="md-nav__link">
+      <a href="../0002-rbac-placement/" class="md-nav__link">
         
   
   
@@ -2277,7 +2207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../adr/0003-token-storage-spa/" class="md-nav__link">
+      <a href="../0003-token-storage-spa/" class="md-nav__link">
         
   
   
@@ -2325,47 +2255,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Акторы
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Внешние системы
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Диаграмма
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2390,52 +2279,8 @@
   
 
 
-<h1 id="c4-context">C4 Context<a class="headerlink" href="#c4-context" title="Permanent link">&para;</a></h1>
-<h2 id="_1">Акторы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Актор</th>
-<th>Описание</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Пользователь</td>
-<td>Работает с проектами</td>
-</tr>
-<tr>
-<td>Администратор</td>
-<td>Управляет организацией</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_2">Внешние системы<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Система</th>
-<th>Назначение</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Keycloak</td>
-<td>Identity Provider (OIDC)</td>
-</tr>
-<tr>
-<td>SMTP</td>
-<td>Email уведомления</td>
-</tr>
-<tr>
-<td>ELK</td>
-<td>Логирование (будущее)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_3">Диаграмма<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>См. <code>_assets/diagrams/c4-context.svg</code></p>
-<p>TODO: Создать PlantUML диаграмму</p>
+<h1 id="adr0001-tenancy-modelmd">Заглушка для adr/0001-tenancy-model.md<a class="headerlink" href="#adr0001-tenancy-modelmd" title="Permanent link">&para;</a></h1>
+<p>Этот файл еще не написан.</p>
 
 
 

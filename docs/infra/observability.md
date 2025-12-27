@@ -1,4 +1,4 @@
-# Observability
+﻿# Observability
 
 > Логирование, метрики, трейсы.
 
@@ -73,5 +73,6 @@ OpenTelemetry для распределённой трассировки.
 
 ## См. также
 
-- [backend/04-Events](../backend/04-Events.md) — события для аудита
+- [backend/04-Events](../backend/events.md) — события для аудита
 - [modules/iam/api/events](../modules/iam/api/events.md) — IAM события
+

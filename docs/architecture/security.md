@@ -1,4 +1,4 @@
-# Security Baseline
+﻿# Security Baseline
 
 > Минимальные требования безопасности.
 
@@ -103,10 +103,11 @@ Access-Control-Allow-Credentials: true
 - Permission changes
 - Admin actions
 
-См. [07-Infra/05-Observability](../07-Infra/05-Observability.md)
+См. [infra/05-Observability](../infra/observability.md)
 
 ## См. также
 
-- [03-Auth-Overview](./03-Auth-Overview.md) — аутентификация
-- [06-Modules/IAM](../modules/iam/00-Index.md) — реализация
-- [90-ADR](../90-ADR/README.md) — решения по безопасности
+- [03-Auth-Overview](./auth-overview.md) — аутентификация
+- [06-Modules/IAM](../modules/iam/index.md) — реализация
+- [90-ADR](../adr/index.md) — решения по безопасности
+

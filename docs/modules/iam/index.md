@@ -1,4 +1,4 @@
-# IAM Module
+﻿# IAM Module
 
 > Identity & Access Management
 
@@ -6,7 +6,7 @@
 
 | Файл | Описание |
 |------|----------|
-| [01-Overview](./01-Overview.md) | Что делает модуль |
+| [01-Overview](./overview.md) | Что делает модуль |
 | [api/openapi-ref](./api/openapi-ref.md) | Ссылка на API |
 | [api/events](./api/events.md) | Redis Streams события |
 | [data/schema](./data/schema.md) | Схема БД |
@@ -17,9 +17,11 @@
 
 | Файл | Описание |
 |------|----------|
-| [dev/PLAN](./dev/PLAN.md) | План разработки |
-| [dev/PROMPTS](./dev/PROMPTS.md) | Промпты для ИИ |
+| [dev/PLAN](./dev/plan.md) | План разработки |
+| [dev/PROMPTS](./dev/prompts.md) | Промпты для ИИ |
 
 ## Статус
 
 🚧 В разработке
+
+
