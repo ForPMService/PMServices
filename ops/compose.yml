@@ -8,14 +8,10 @@ services:
     env_file: ./.env
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
-      # строка подключения к приложенческой БД
       ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=${APP_DB};Username=${APP_USER};Password=${APP_PASSWORD}"
-      # Redis для кеша/сессий
       Redis__Configuration: "redis:6379"
-      # Почта через Mailpit (dev)
       Mail__Smtp__Host: "mailpit"
       Mail__Smtp__Port: "1025"
-      # Keycloak (потом в appsettings можно под это завести секцию Keycloak)
       Keycloak__Authority: "http://keycloak:8080/realms/pmservices"
       Keycloak__ClientId: "pmservices-api"
     ports:
@@ -92,8 +88,8 @@ services:
     container_name: pmservices-mailpit
     restart: unless-stopped
     ports:
-      - "1025:1025"   # SMTP
-      - "8025:8025"   # Web UI
+      - "1025:1025"
+      - "8025:8025"
     networks:
       - pmservices-net
 
@@ -102,6 +98,8 @@ services:
     container_name: pmservices-web
     restart: unless-stopped
     volumes:
+      # SPA routing config (FIX: добавлен конфиг)
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       - ../pmservices-web/dist/pmservices-web/browser:/usr/share/nginx/html:ro
     ports:
       - "4200:80"
