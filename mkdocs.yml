@@ -65,6 +65,7 @@ plugins:
       lang: 
         - ru
         - en
+  - awesome-pages
   - tags
 
 markdown_extensions:
@@ -121,58 +122,59 @@ extra_css:
 # ============================================
 # NAVIGATION
 # ============================================
-nav:
-  - Главная:
-    - Обзор: index.md
-    - Глоссарий: glossary.md
+
+# nav:
+#   - Главная:
+#     - Обзор: index.md
+#     - Глоссарий: glossary.md
   
-  - Архитектура:
-    - architecture/index.md
-    - C4 Context: architecture/c4-context.md
-    - C4 Containers: architecture/c4-containers.md
-    - Аутентификация: architecture/auth-overview.md
-    - Безопасность: architecture/security.md
+#   - Архитектура:
+#     - architecture/index.md
+#     - C4 Context: architecture/c4-context.md
+#     - C4 Containers: architecture/c4-containers.md
+#     - Аутентификация: architecture/auth-overview.md
+#     - Безопасность: architecture/security.md
   
-  - Backend:
-    - backend/index.md
-    - Структура: backend/architecture.md
-    - База данных: backend/database.md
-    - Миграции: backend/migrations.md
-    - События: backend/events.md
+#   - Backend:
+#     - backend/index.md
+#     - Структура: backend/architecture.md
+#     - База данных: backend/database.md
+#     - Миграции: backend/migrations.md
+#     - События: backend/events.md
   
-  - Frontend:
-    - frontend/index.md
-    - Архитектура: frontend/architecture.md
-    - OIDC Auth: frontend/auth.md
-    - API клиент: frontend/api.md
+#   - Frontend:
+#     - frontend/index.md
+#     - Архитектура: frontend/architecture.md
+#     - OIDC Auth: frontend/auth.md
+#     - API клиент: frontend/api.md
   
-  - Модули:
-    - modules/index.md
-    - IAM:
-      - modules/iam/index.md
-      - Обзор: modules/iam/overview.md
-      - API:
-        - OpenAPI: modules/iam/api/openapi-ref.md
-        - События: modules/iam/api/events.md
-      - Данные:
-        - Схема БД: modules/iam/data/schema.md
-      - UI:
-        - Роуты: modules/iam/ui/routes.md
-        - Страницы: modules/iam/ui/pages.md
-      - Разработка:
-        - План: modules/iam/dev/plan.md
-        - Промпты: modules/iam/dev/prompts.md
+#   - Модули:
+#     - modules/index.md
+#     - IAM:
+#       - modules/iam/index.md
+#       - Обзор: modules/iam/overview.md
+#       - API:
+#         - OpenAPI: modules/iam/api/openapi-ref.md
+#         - События: modules/iam/api/events.md
+#       - Данные:
+#         - Схема БД: modules/iam/data/schema.md
+#       - UI:
+#         - Роуты: modules/iam/ui/routes.md
+#         - Страницы: modules/iam/ui/pages.md
+#       - Разработка:
+#         - План: modules/iam/dev/plan.md
+#         - Промпты: modules/iam/dev/prompts.md
   
-  - Инфраструктура:
-    - infra/index.md
-    - Локальная разработка: infra/local-dev.md
-    - Настройка Keycloak: infra/keycloak-setup.md
-    - Переменные окружения: infra/env-config.md
-    - Observability: infra/observability.md
-    - Email: infra/email.md
+#   - Инфраструктура:
+#     - infra/index.md
+#     - Локальная разработка: infra/local-dev.md
+#     - Настройка Keycloak: infra/keycloak-setup.md
+#     - Переменные окружения: infra/env-config.md
+#     - Observability: infra/observability.md
+#     - Email: infra/email.md
   
-  - ADR:
-    - adr/index.md
-    - "0001: Tenancy Model": adr/0001-tenancy-model.md
-    - "0002: RBAC Placement": adr/0002-rbac-placement.md
-    - "0003: Token Storage": adr/0003-token-storage-spa.md
+#   - ADR:
+#     - adr/index.md
+#     - "0001: Tenancy Model": adr/0001-tenancy-model.md
+#     - "0002: RBAC Placement": adr/0002-rbac-placement.md
+#     - "0003: Token Storage": adr/0003-token-storage-spa.md
