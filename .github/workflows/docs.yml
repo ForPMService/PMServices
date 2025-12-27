@@ -47,6 +47,7 @@ jobs:
           pip install \
             mkdocs-material \
             mkdocs-git-revision-date-localized-plugin \
+            mkdocs-awesome-pages-plugin \
             mkdocs-minify-plugin \
             pillow \
             cairosvg
