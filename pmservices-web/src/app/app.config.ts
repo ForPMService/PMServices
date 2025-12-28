@@ -1,17 +1,20 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
+﻿import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideAuth, authInterceptor } from 'angular-auth-oidc-client';
 
 import { routes } from './app.routes';
-import { KEYCLOAK_PROVIDERS } from './core/auth/keycloak.config';
+import { authConfig } from './core/auth/auth.config';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient(),
+    
+    // Подключаем HttpClient и Интерсептор (он сам добавит Bearer token к запросам)
+    provideHttpClient(withInterceptors([authInterceptor()])),
 
-    ...KEYCLOAK_PROVIDERS,
+    // Инициализируем OIDC
+    provideAuth(authConfig),
   ],
 };

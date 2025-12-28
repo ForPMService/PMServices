@@ -1,0 +1,38 @@
+﻿<div style="padding: 2rem; font-family: sans-serif; max-width: 800px; margin: 0 auto;">
+  <h1>PMServices IAM <small>(Phase 1)</small></h1>
+
+  <div *ngIf="isAuthenticated$ | async; else loginBlock" 
+       style="background: #e6fffa; padding: 20px; border-radius: 8px; border: 1px solid #b2f5ea;">
+    
+    <h2>👋 Добро пожаловать, {{ (userData$ | async)?.name }}!</h2>
+    <p>Email: <strong>{{ (userData$ | async)?.email }}</strong></p>
+    
+    <button (click)="logout()" 
+            style="padding: 10px 20px; background: #e53e3e; color: white; border: none; border-radius: 4px; cursor: pointer;">
+      Выйти
+    </button>
+
+    <div style="margin-top: 20px;">
+      <details>
+        <summary style="cursor: pointer; color: #555;">Показать полный токен (Debug)</summary>
+        <pre style="background: #333; color: #fff; padding: 10px; border-radius: 4px; overflow: auto;">{{ userData$ | async | json }}</pre>
+      </details>
+    </div>
+  </div>
+
+  <ng-template #loginBlock>
+    <div style="background: #fff5f5; padding: 20px; border-radius: 8px; border: 1px solid #fed7d7;">
+      <h2>🔒 Вы не авторизованы</h2>
+      <p>Для доступа к системе необходимо войти через корпоративный аккаунт.</p>
+      
+      <button (click)="login()" 
+              style="padding: 10px 20px; background: #3182ce; color: white; border: none; border-radius: 4px; cursor: pointer;">
+        Войти через Keycloak
+      </button>
+    </div>
+  </ng-template>
+
+  <hr style="margin: 40px 0;">
+  
+  <router-outlet></router-outlet>
+</div>
