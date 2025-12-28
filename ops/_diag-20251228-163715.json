@@ -1,0 +1,186 @@
+﻿[
+    {
+        "Time":  "2025-12-28 16:37:12",
+        "Area":  "Compose",
+        "Check":  "compose ps",
+        "Target":  "project",
+        "Status":  "WARN",
+        "Details":  "JSON parse failed, using text output"
+    },
+    {
+        "Time":  "2025-12-28 16:37:12",
+        "Area":  "Compose",
+        "Check":  "compose ps",
+        "Target":  "project",
+        "Status":  "OK",
+        "Details":  "Text output captured"
+    },
+    {
+        "Time":  "2025-12-28 16:37:12",
+        "Area":  "Compose",
+        "Check":  "compose ps raw",
+        "Target":  "project",
+        "Status":  "INFO",
+        "Details":  "NAME                             IMAGE                              COMMAND                  SERVICE             CREATED          STATUS                    PORTS\npmservices-api-1                 pmservices-api                     \"dotnet PMServices.d…\"   api                 35 minutes ago   Up 35 minutes             0.0.0.0:8080-\u003e8080/tcp, [::]:8080-\u003e8080/tcp\npmservices-keycloak-1            quay.io/keycloak/keycloak:26.4.7   \"/opt/keycloak/bin/k…\"   keycloak            35 minutes ago   Up 35 minutes             0.0.0.0:8081-\u003e8080/tcp, [::]:8081-\u003e8080/tcp\npmservices-mailpit-1             axllent/mailpit:v1.28.0            \"/mailpit\"               mailpit             35 minutes ago   Up 35 minutes (healthy)   0.0.0.0:1025-\u003e1025/tcp, [::]:1025-\u003e1025/tcp, 0.0.0.0:8025-\u003e8025/tcp, [::]:8025-\u003e8025/tcp\npmservices-postgres-app-1        postgres:16                        \"docker-entrypoint.s…\"   postgres-app        35 minutes ago   Up 35 minutes (healthy)   0.0.0.0:5432-\u003e5432/tcp, [::]:5432-\u003e5432/tcp\npmservices-postgres-keycloak-1   postgres:16                        \"docker-entrypoint.s…\"   postgres-keycloak   35 minutes ago   Up 35 minutes (healthy)   0.0.0.0:5433-\u003e5432/tcp, [::]:5433-\u003e5432/tcp\npmservices-redis-1               redis:7-alpine                     \"docker-entrypoint.s…\"   redis               35 minutes ago   Up 35 minutes (healthy)   0.0.0.0:6379-\u003e6379/tcp, [::]:6379-\u003e6379/tcp"
+    },
+    {
+        "Time":  "2025-12-28 16:37:11",
+        "Area":  "Config",
+        "Check":  ".env loaded",
+        "Target":  "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\ops\\.env",
+        "Status":  "OK",
+        "Details":  "Keys: 16"
+    },
+    {
+        "Time":  "2025-12-28 16:37:11",
+        "Area":  "Docker",
+        "Check":  "docker compose version",
+        "Target":  "local",
+        "Status":  "OK",
+        "Details":  "Docker Compose version v2.39.1-desktop.1"
+    },
+    {
+        "Time":  "2025-12-28 16:37:11",
+        "Area":  "Docker",
+        "Check":  "docker --version",
+        "Target":  "local",
+        "Status":  "OK",
+        "Details":  "Docker version 28.3.2, build 578ccf6"
+    },
+    {
+        "Time":  "2025-12-28 16:37:13",
+        "Area":  "Exec",
+        "Check":  "API env (filtered)",
+        "Target":  "api",
+        "Status":  "OK",
+        "Details":  "Redis__ConnectionString=redis:6379\r; Keycloak__ClientId=pm****i\r; Keycloak__Realm=pm****s\r; Keycloak__ClientSecret=ch****e\r; Keycloak__RequireHttpsMetadata=fa****e\r; ASPNETCORE_ENVIRONMENT=Development\r; Smtp__Port=1025\r; ConnectionStrings__AppDb=Host=postgres-app;Port=5432;Database=pmservices;Username=pmservices;Password=pmservices_dev_password\r; ConnectionStrings__DefaultConnection=Host=postgres-app;Port=5432;Database=pmservices;Username=pmservices;Password=pmservices_dev_password\r; Smtp__Host=mailpit\r; Keycloak__PublicIssuer=ht****s\r; Keycloak__InternalAuthority=ht****s\r; ASPNETCORE_HTTP_PORTS=8080\r; ASPNET_VERSION=10.0.1\r"
+    },
+    {
+        "Time":  "2025-12-28 16:37:12",
+        "Area":  "Exec",
+        "Check":  "Postgres app select",
+        "Target":  "postgres-app",
+        "Status":  "OK",
+        "Details":  "select 1 OK"
+    },
+    {
+        "Time":  "2025-12-28 16:37:13",
+        "Area":  "Exec",
+        "Check":  "Postgres keycloak select",
+        "Target":  "postgres-keycloak",
+        "Status":  "OK",
+        "Details":  "select 1 OK"
+    },
+    {
+        "Time":  "2025-12-28 16:37:12",
+        "Area":  "Exec",
+        "Check":  "Redis ping",
+        "Target":  "redis",
+        "Status":  "OK",
+        "Details":  "PONG"
+    },
+    {
+        "Time":  "2025-12-28 16:37:12",
+        "Area":  "HTTP",
+        "Check":  "API /",
+        "Target":  "http://localhost:8080/",
+        "Status":  "WARN",
+        "Details":  "HTTP 404 (HTTP error but reachable)"
+    },
+    {
+        "Time":  "2025-12-28 16:37:12",
+        "Area":  "HTTP",
+        "Check":  "API swagger",
+        "Target":  "http://localhost:8080/swagger/index.html",
+        "Status":  "WARN",
+        "Details":  "HTTP 404 (HTTP error but reachable)"
+    },
+    {
+        "Time":  "2025-12-28 16:37:12",
+        "Area":  "HTTP",
+        "Check":  "Elasticsearch",
+        "Target":  "http://localhost:9200/",
+        "Status":  "SKIP",
+        "Details":  "Not running (profile observability not enabled)"
+    },
+    {
+        "Time":  "2025-12-28 16:37:12",
+        "Area":  "HTTP",
+        "Check":  "Keycloak /",
+        "Target":  "http://localhost:8081/",
+        "Status":  "OK",
+        "Details":  "HTTP 200 (OK)"
+    },
+    {
+        "Time":  "2025-12-28 16:37:12",
+        "Area":  "HTTP",
+        "Check":  "Keycloak ready",
+        "Target":  "http://localhost:8081/health/ready",
+        "Status":  "WARN",
+        "Details":  "HTTP 404 (HTTP error but reachable)"
+    },
+    {
+        "Time":  "2025-12-28 16:37:12",
+        "Area":  "HTTP",
+        "Check":  "Kibana",
+        "Target":  "http://localhost:5601/",
+        "Status":  "SKIP",
+        "Details":  "Not running (profile observability not enabled)"
+    },
+    {
+        "Time":  "2025-12-28 16:37:12",
+        "Area":  "HTTP",
+        "Check":  "Mailpit /",
+        "Target":  "http://localhost:8025/",
+        "Status":  "OK",
+        "Details":  "HTTP 200 (OK)"
+    },
+    {
+        "Time":  "2025-12-28 16:37:13",
+        "Area":  "Logs",
+        "Check":  "tail",
+        "Target":  "api",
+        "Status":  "INFO",
+        "Details":  "tail=200 captured"
+    },
+    {
+        "Time":  "2025-12-28 16:37:14",
+        "Area":  "Logs",
+        "Check":  "tail",
+        "Target":  "keycloak",
+        "Status":  "INFO",
+        "Details":  "tail=200 captured"
+    },
+    {
+        "Time":  "2025-12-28 16:37:15",
+        "Area":  "Logs",
+        "Check":  "tail",
+        "Target":  "mailpit",
+        "Status":  "INFO",
+        "Details":  "tail=200 captured"
+    },
+    {
+        "Time":  "2025-12-28 16:37:14",
+        "Area":  "Logs",
+        "Check":  "tail",
+        "Target":  "postgres-app",
+        "Status":  "INFO",
+        "Details":  "tail=200 captured"
+    },
+    {
+        "Time":  "2025-12-28 16:37:14",
+        "Area":  "Logs",
+        "Check":  "tail",
+        "Target":  "postgres-keycloak",
+        "Status":  "INFO",
+        "Details":  "tail=200 captured"
+    },
+    {
+        "Time":  "2025-12-28 16:37:14",
+        "Area":  "Logs",
+        "Check":  "tail",
+        "Target":  "redis",
+        "Status":  "INFO",
+        "Details":  "tail=200 captured"
+    }
+]

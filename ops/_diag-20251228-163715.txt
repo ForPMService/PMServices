@@ -1,0 +1,43 @@
+﻿PMServices diagnostics: 20251228-163715
+Folder: C:\Users\89263\Desktop\Project\ProjectPlatform\PMServices\ops
+
+=== TABLE ===
+
+Time                Area    Check                    Target                                                            
+----                ----    -----                    ------                                                            
+2025-12-28 16:37:12 Compose compose ps               project                                                           
+2025-12-28 16:37:12 Compose compose ps               project                                                           
+2025-12-28 16:37:12 Compose compose ps raw           project                                                           
+2025-12-28 16:37:11 Config  .env loaded              C:\Users\89263\Desktop\Project\ProjectPlatform\PMServices\ops\.env
+2025-12-28 16:37:11 Docker  docker compose version   local                                                             
+2025-12-28 16:37:11 Docker  docker --version         local                                                             
+2025-12-28 16:37:13 Exec    API env (filtered)       api                                                               
+2025-12-28 16:37:12 Exec    Postgres app select      postgres-app                                                      
+2025-12-28 16:37:13 Exec    Postgres keycloak select postgres-keycloak                                                 
+2025-12-28 16:37:12 Exec    Redis ping               redis                                                             
+2025-12-28 16:37:12 HTTP    API /                    http://localhost:8080/                                            
+2025-12-28 16:37:12 HTTP    API swagger              http://localhost:8080/swagger/index.html                          
+2025-12-28 16:37:12 HTTP    Elasticsearch            http://localhost:9200/                                            
+2025-12-28 16:37:12 HTTP    Keycloak /               http://localhost:8081/                                            
+2025-12-28 16:37:12 HTTP    Keycloak ready           http://localhost:8081/health/ready                                
+2025-12-28 16:37:12 HTTP    Kibana                   http://localhost:5601/                                            
+2025-12-28 16:37:12 HTTP    Mailpit /                http://localhost:8025/                                            
+2025-12-28 16:37:13 Logs    tail                     api                                                               
+2025-12-28 16:37:14 Logs    tail                     keycloak                                                          
+2025-12-28 16:37:15 Logs    tail                     mailpit                                                           
+2025-12-28 16:37:14 Logs    tail                     postgres-app                                                      
+2025-12-28 16:37:14 Logs    tail                     postgres-keycloak                                                 
+2025-12-28 16:37:14 Logs    tail                     redis                                                             
+
+
+
+
+=== docker compose ps ===
+NAME                             IMAGE                              COMMAND                  SERVICE             CREATED          STATUS                    PORTS
+pmservices-api-1                 pmservices-api                     "dotnet PMServices.d…"   api                 35 minutes ago   Up 35 minutes             0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
+pmservices-keycloak-1            quay.io/keycloak/keycloak:26.4.7   "/opt/keycloak/bin/k…"   keycloak            35 minutes ago   Up 35 minutes             0.0.0.0:8081->8080/tcp, [::]:8081->8080/tcp
+pmservices-mailpit-1             axllent/mailpit:v1.28.0            "/mailpit"               mailpit             35 minutes ago   Up 35 minutes (healthy)   0.0.0.0:1025->1025/tcp, [::]:1025->1025/tcp, 0.0.0.0:8025->8025/tcp, [::]:8025->8025/tcp
+pmservices-postgres-app-1        postgres:16                        "docker-entrypoint.s…"   postgres-app        35 minutes ago   Up 35 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+pmservices-postgres-keycloak-1   postgres:16                        "docker-entrypoint.s…"   postgres-keycloak   35 minutes ago   Up 35 minutes (healthy)   0.0.0.0:5433->5432/tcp, [::]:5433->5432/tcp
+pmservices-redis-1               redis:7-alpine                     "docker-entrypoint.s…"   redis               35 minutes ago   Up 35 minutes (healthy)   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp
+

@@ -1,113 +1,179 @@
+name: pmservices
+
 services:
   api:
     build:
-      context: ..
+      context: ../backend
       dockerfile: Dockerfile
-    container_name: pmservices-api
-    restart: unless-stopped
-    env_file: ./.env
+      args:
+        BUILD_CONFIGURATION: Release
     environment:
-      ASPNETCORE_ENVIRONMENT: "Development"
-      ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=${APP_DB};Username=${APP_USER};Password=${APP_PASSWORD}"
-      Redis__Configuration: "redis:6379"
-      Mail__Smtp__Host: "mailpit"
-      Mail__Smtp__Port: "1025"
-      Keycloak__Authority: "http://keycloak:8080/realms/pmservices"
-      Keycloak__ClientId: "pmservices-api"
+      ASPNETCORE_ENVIRONMENT: Development
+
+      # DB (приложение) — оставил оба ключа, чтобы не зависеть от того,
+      # как ты назовёшь строку подключения в коде (DefaultConnection vs AppDb)
+      ConnectionStrings__DefaultConnection: Host=postgres-app;Port=5432;Database=pmservices;Username=pmservices;Password=${APP_DB_PASSWORD}
+      ConnectionStrings__AppDb:             Host=postgres-app;Port=5432;Database=pmservices;Username=pmservices;Password=${APP_DB_PASSWORD}
+
+      # Keycloak (это НЕ “особый синтаксис”, а обычная привязка конфигурации .NET:
+      # Keycloak__Realm => Keycloak:Realm)
+      Keycloak__Realm: ${KEYCLOAK_REALM}
+      Keycloak__InternalAuthority: ${KEYCLOAK_INTERNAL_URL}/realms/${KEYCLOAK_REALM}
+      Keycloak__PublicIssuer: ${KEYCLOAK_PUBLIC_URL}/realms/${KEYCLOAK_REALM}
+      Keycloak__ClientId: ${KEYCLOAK_CLIENT_ID}
+      Keycloak__ClientSecret: ${KEYCLOAK_CLIENT_SECRET}
+      Keycloak__RequireHttpsMetadata: "false"
+
+      # Redis
+      Redis__ConnectionString: redis:6379
+
+      # SMTP (Mailpit) — тут всегда 1025 внутри сети docker
+      Smtp__Host: mailpit
+      Smtp__Port: 1025
+
     ports:
-      - "5000:8080"
+      - "${API_HTTP_PORT}:8080"
     depends_on:
-      db:
+      postgres-app:
         condition: service_healthy
       redis:
-        condition: service_started
+        condition: service_healthy
       keycloak:
         condition: service_started
       mailpit:
         condition: service_started
-    networks:
-      - pmservices-net
-
-  db:
-    image: postgres:18.1-bookworm
-    container_name: pmservices-db
+    networks: [pmnet]
     restart: unless-stopped
-    env_file: ./.env
+
+  postgres-app:
+    image: postgres:16
     environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: pmservices
+      POSTGRES_USER: pmservices
+      POSTGRES_PASSWORD: ${APP_DB_PASSWORD}
     ports:
-      - "15432:5432"
+      - "${APP_DB_PORT}:5432"
     volumes:
-      - pgdata:/var/lib/postgresql
-      - ./initdb:/docker-entrypoint-initdb.d:ro
+      - pg_app:/var/lib/postgresql/data
+      # если у тебя реально есть ops/initdb/10-app.sql — включай:
+      # - ./initdb/10-app.sql:/docker-entrypoint-initdb.d/10-app.sql:ro
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER}"]
+      test: ["CMD-SHELL", "pg_isready -U pmservices -d pmservices"]
       interval: 5s
       timeout: 3s
-      retries: 10
-    networks:
-      - pmservices-net
-
-  redis:
-    image: redis:8.4.0-bookworm
-    container_name: pmservices-redis
+      retries: 20
+    networks: [pmnet]
     restart: unless-stopped
+
+  postgres-keycloak:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: ${KC_DB_PASSWORD}
     ports:
-      - "6379:6379"
-    command: ["redis-server", "--appendonly", "no"]
-    networks:
-      - pmservices-net
+      - "${KC_DB_PORT}:5432"
+    volumes:
+      - pg_keycloak:/var/lib/postgresql/data
+      # если у тебя реально есть ops/initdb/20-keycloak.sql — включай:
+      # - ./initdb/20-keycloak.sql:/docker-entrypoint-initdb.d/20-keycloak.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U keycloak -d keycloak"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    networks: [pmnet]
+    restart: unless-stopped
 
   keycloak:
     image: quay.io/keycloak/keycloak:26.4.7
-    container_name: pmservices-keycloak
-    restart: unless-stopped
-    env_file: ./.env
+    command: ["start-dev", "--import-realm"]
     environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${KEYCLOAK_ADMIN_USERNAME}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+
       KC_DB: postgres
-      KC_DB_URL: "jdbc:postgresql://db:5432/${KC_DB}"
-      KC_DB_USERNAME: ${KC_USER}
-      KC_DB_PASSWORD: ${KC_PASSWORD}
-      KC_BOOTSTRAP_ADMIN_USERNAME: ${KC_BOOTSTRAP_ADMIN_USERNAME}
-      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_BOOTSTRAP_ADMIN_PASSWORD}
-      KC_HTTP_ENABLED: "true"
-      KC_HOSTNAME_STRICT: "false"
+      KC_DB_URL: jdbc:postgresql://postgres-keycloak:5432/keycloak
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: ${KC_DB_PASSWORD}
+
       KC_HEALTH_ENABLED: "true"
-    command: ["start-dev"]
+      KC_METRICS_ENABLED: "true"
+      KC_HOSTNAME_STRICT: "false"
+
+      # На будущее против "issuer invalid":
+      # фиксируем внешний URL (frontend), а backchannel можно сделать динамическим
+      #KC_HOSTNAME: ${KEYCLOAK_PUBLIC_URL}
+      #KC_HOSTNAME_BACKCHANNEL_DYNAMIC: "true"
+
     ports:
-      - "8085:8080"
+      - "${KEYCLOAK_HTTP_PORT}:8080"
+    volumes:
+      - ./keycloak/import:/opt/keycloak/data/import:ro
     depends_on:
-      db:
+      postgres-keycloak:
         condition: service_healthy
-    networks:
-      - pmservices-net
+    networks: [pmnet]
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "${REDIS_PORT}:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    networks: [pmnet]
+    restart: unless-stopped
 
   mailpit:
     image: axllent/mailpit:v1.28.0
-    container_name: pmservices-mailpit
-    restart: unless-stopped
     ports:
-      - "1025:1025"
-      - "8025:8025"
-    networks:
-      - pmservices-net
-
-  web:
-    image: nginx:1.28.1-alpine
-    container_name: pmservices-web
+      - "${MAILPIT_WEB_PORT}:8025"
+      - "${MAILPIT_SMTP_PORT}:1025"
+    networks: [pmnet]
     restart: unless-stopped
+
+  # ----------------------------
+  # Observability (ELK) — профиль
+  # Запуск: docker compose --profile observability up -d
+  # ----------------------------
+  elasticsearch:
+    profiles: ["observability"]
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.19.9
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "9200:9200"
     volumes:
-      # SPA routing config (FIX: добавлен конфиг)
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
-      - ../pmservices-web/dist/pmservices-web/browser:/usr/share/nginx/html:ro
-    ports:
-      - "4200:80"
-    networks:
-      - pmservices-net
+      - es_data:/usr/share/elasticsearch/data
+    networks: [pmnet]
+    restart: unless-stopped
 
-volumes:
-  pgdata:
+  kibana:
+    profiles: ["observability"]
+    image: docker.elastic.co/kibana/kibana:8.19.9
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    depends_on: [elasticsearch]
+    networks: [pmnet]
+    restart: unless-stopped
 
 networks:
-  pmservices-net:
+  pmnet:
+    driver: bridge
+
+volumes:
+  pg_app:
+  pg_keycloak:
+  redis_data:
+  es_data:

@@ -1,0 +1,24 @@
+﻿"Time","Area","Check","Target","Status","Details"
+"2025-12-28 16:36:42","Compose","compose ps","project","OK","Text output captured"
+"2025-12-28 16:36:42","Compose","compose ps","project","WARN","JSON parse failed, using text output"
+"2025-12-28 16:36:42","Compose","compose ps raw","project","INFO","NAME                             IMAGE                              COMMAND                  SERVICE             CREATED          STATUS                    PORTS
+pmservices-api-1                 pmservices-api                     ""dotnet PMServices.d…""   api                 35 minutes ago   Up 35 minutes             0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp
+pmservices-keycloak-1            quay.io/keycloak/keycloak:26.4.7   ""/opt/keycloak/bin/k…""   keycloak            35 minutes ago   Up 35 minutes             0.0.0.0:8081->8080/tcp, [::]:8081->8080/tcp
+pmservices-mailpit-1             axllent/mailpit:v1.28.0            ""/mailpit""               mailpit             35 minutes ago   Up 35 minutes (healthy)   0.0.0.0:1025->1025/tcp, [::]:1025->1025/tcp, 0.0.0.0:8025->8025/tcp, [::]:8025->8025/tcp
+pmservices-postgres-app-1        postgres:16                        ""docker-entrypoint.s…""   postgres-app        35 minutes ago   Up 35 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+pmservices-postgres-keycloak-1   postgres:16                        ""docker-entrypoint.s…""   postgres-keycloak   35 minutes ago   Up 35 minutes (healthy)   0.0.0.0:5433->5432/tcp, [::]:5433->5432/tcp
+pmservices-redis-1               redis:7-alpine                     ""docker-entrypoint.s…""   redis               35 minutes ago   Up 35 minutes (healthy)   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp"
+"2025-12-28 16:36:42","Config",".env loaded","C:\Users\89263\Desktop\Project\ProjectPlatform\PMServices\ops\.env","OK","Keys: 16"
+"2025-12-28 16:36:42","Docker","docker compose version","local","OK","Docker Compose version v2.39.1-desktop.1"
+"2025-12-28 16:36:41","Docker","docker --version","local","OK","Docker version 28.3.2, build 578ccf6"
+"2025-12-28 16:36:43","Exec","API env (filtered)","api","OK","Redis__ConnectionString=redis:6379; Keycloak__ClientId=pm****i; Keycloak__Realm=pm****s; Keycloak__ClientSecret=ch****e; Keycloak__RequireHttpsMetadata=fa****e; ASPNETCORE_ENVIRONMENT=Development; Smtp__Port=1025; ConnectionStrings__AppDb=Host=postgres-app;Port=5432;Database=pmservices;Username=pmservices;Password=pmservices_dev_password; ConnectionStrings__DefaultConnection=Host=postgres-app;Port=5432;Database=pmservices;Username=pmservices;Password=pmservices_dev_password; Smtp__Host=mailpit; Keycloak__PublicIssuer=ht****s; Keycloak__InternalAuthority=ht****s; ASPNETCORE_HTTP_PORTS=8080; ASPNET_VERSION=10.0.1"
+"2025-12-28 16:36:43","Exec","Postgres app select","postgres-app","OK","select 1 OK"
+"2025-12-28 16:36:43","Exec","Postgres keycloak select","postgres-keycloak","OK","select 1 OK"
+"2025-12-28 16:36:43","Exec","Redis ping","redis","OK","PONG"
+"2025-12-28 16:36:42","HTTP","API /","http://localhost:8080/","WARN","HTTP 404 (HTTP error but reachable)"
+"2025-12-28 16:36:42","HTTP","API swagger","http://localhost:8080/swagger/index.html","WARN","HTTP 404 (HTTP error but reachable)"
+"2025-12-28 16:36:42","HTTP","Elasticsearch","http://localhost:9200/","SKIP","Not running (profile observability not enabled)"
+"2025-12-28 16:36:42","HTTP","Keycloak /","http://localhost:8081/","OK","HTTP 200 (OK)"
+"2025-12-28 16:36:42","HTTP","Keycloak ready","http://localhost:8081/health/ready","WARN","HTTP 404 (HTTP error but reachable)"
+"2025-12-28 16:36:42","HTTP","Kibana","http://localhost:5601/","SKIP","Not running (profile observability not enabled)"
+"2025-12-28 16:36:42","HTTP","Mailpit /","http://localhost:8025/","OK","HTTP 200 (OK)"
