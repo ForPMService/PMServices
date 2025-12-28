@@ -1,10 +1,10 @@
-﻿# Frontend Patterns
+# Frontend Patterns
 
 ## Документы
 
-- [01-Architecture](./architecture.md) — структура приложения
-- [02-Auth](./auth.md) — OIDC интеграция
-- [03-API](./api.md) — работа с Backend
+- [Архитектура](./architecture.md) — структура приложения
+- [Аутентификация](./auth.md) — OIDC интеграция
+- [API](./api.md) — работа с Backend
 
 ## Принципы
 
@@ -15,11 +15,8 @@
 
 ## Код
 
-Код генерируется через промпты в `06-Modules/*/dev/prompts.md`
+Код генерируется через промпты в `modules/*/dev/prompts.md`
 
 ## Дизайн
 
 Компоненты и UI Kit определяются после утверждения дизайна.
-См. `06-Design/` (TODO).
-
-
