@@ -1,32 +1,43 @@
 <!doctype html>
-<html>
+<html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <title>PMServices IAM API – Swagger UI</title>
+    <title>PMServices IAM API — Swagger UI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist/swagger-ui.css" />
+
     <style>
       body { margin: 0; }
     </style>
   </head>
+
   <body>
     <div id="swagger-ui"></div>
 
+    <!-- Core bundle -->
     <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"></script>
-    <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <!-- Standalone preset (даёт topbar/Explore как на petstore) -->
+    <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-standalone-preset.js"></script>
+
     <script>
-      fetch("openapi.yaml")
-        .then(res => res.arrayBuffer())
-        .then(buffer => {
-          const decoder = new TextDecoder("utf-8");
-          const spec = decoder.decode(buffer);
-          window.ui = SwaggerUIBundle({
-            spec: jsyaml.load(spec),
-            dom_id: "#swagger-ui",
-            deepLinking: true,
-            persistAuthorization: true
-          });
-        });
+      window.ui = SwaggerUIBundle({
+        url: "./openapi.yaml",
+        dom_id: "#swagger-ui",
+
+        deepLinking: true,
+        persistAuthorization: true,
+
+        // “Как на petstore”
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
+        ],
+        layout: "StandaloneLayout"
+      });
     </script>
   </body>
 </html>
