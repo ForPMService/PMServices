@@ -26,8 +26,10 @@ info:
     - ❌ Нельзя изменить (PUT возвращает 403)
     
     Для кастомизации — создайте копию роли с новым `code`.
-    
-    ## Коды ошибок
+
+    <details>
+    <summary><b>Коды ошибок</b> (нажмите, чтобы раскрыть)</summary>
+
     | Код | Описание |
     |-----|----------|
     | IAM-001 | Email already registered |
@@ -51,6 +53,8 @@ info:
     | IAM-019 | Invalid file format |
     | IAM-020 | File too large |
     | IAM-021 | Domain not allowed |
+
+    </details>
     
     ## Swagger UI авторизация
     - **Local**: используйте `OpenIdConnectLocal` (Authorization Code + PKCE)
@@ -60,13 +64,9 @@ info:
     ## Internal API
     Endpoints с тегом `Internal` предназначены **только для сервисов/модулей**:
     - Доступ разрешён только из private network (не публиковать на public ingress)
-    - Аутентификация: `client_credentials` (scheme `InternalServiceAuth`)
+    - Аутентификация сервисов: `client_credentials` (scheme `InternalServiceAuth`)
     - Требуется scope `iam.internal` и проверка `aud`/`client_id`
-    - Рекомендуется mTLS между сервисами
-
-    -Internal доступен только из private network
-    -аутентификация сервисов: client_credentials + scope iam.internal + проверка aud/client_id
-    -рекомендуется mTLS (mutual TLS — взаимная TLS-аутентификация сертификатами клиента и сервера)
+    - Рекомендуется mTLS (mutual TLS — взаимная TLS-аутентификация сертификатами клиента и сервера) между сервисами
 
 
     
