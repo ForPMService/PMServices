@@ -2,33 +2,33 @@ openapi: 3.1.0
 info:
   title: PMServices IAM API
   description: |
-    Identity & Access Management API Ð´Ð»Ñ Ð¿Ð»Ð°Ñ‚Ñ„Ð¾Ñ€Ð¼Ñ‹ PMServices.
+    Identity & Access Management API для платформы PMServices.
     
-    ## ÐÑƒÑ‚ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ñ
-    API Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÑ‚ JWT Bearer Ñ‚Ð¾ÐºÐµÐ½Ñ‹ Ð¾Ñ‚ Keycloak (OIDC).
-    Ð¢Ð¾ÐºÐµÐ½ Ð¿ÐµÑ€ÐµÐ´Ð°Ñ‘Ñ‚ÑÑ Ð² Ð·Ð°Ð³Ð¾Ð»Ð¾Ð²ÐºÐµ `Authorization: Bearer <token>`.
+    ## Аутентификация
+    API использует JWT Bearer токены от Keycloak (OIDC).
+    Токен передаётся в заголовке `Authorization: Bearer <token>`.
     
-    ## ÐšÐ¾Ð½Ñ‚ÐµÐºÑÑ‚ Ð¾Ñ€Ð³Ð°Ð½Ð¸Ð·Ð°Ñ†Ð¸Ð¸
-    ÐŸÐ¾ÑÐ»Ðµ Ð²Ñ‹Ð±Ð¾Ñ€Ð° workspace Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÑ‚ÑÑ Ð·Ð°Ð³Ð¾Ð»Ð¾Ð²Ð¾Ðº `X-PM-OrgId`:
+    ## Контекст организации
+    После выбора workspace используется заголовок `X-PM-OrgId`:
     
-    - **`X-PM-OrgId` Ð¾Ð±ÑÐ·Ð°Ñ‚ÐµÐ»ÐµÐ½** Ð´Ð»Ñ org-scoped Ð·Ð°Ð¿Ñ€Ð¾ÑÐ¾Ð² **Ð±ÐµÐ·** `{orgId}` Ð² path:
+    - **`X-PM-OrgId` обязателен** для org-scoped запросов **без** `{orgId}` в path:
       - RBAC (`/rbac/roles`, `/rbac/permissions`, `/rbac/users/{userId}/roles`)
       - Permissions check (`/me/permissions`, `/rbac/check`)
     
-    - **`{orgId}` Ð² path** â€” Ð´Ð»Ñ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ð¹ ÑƒÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ñ ÐºÐ¾Ð½ÐºÑ€ÐµÑ‚Ð½Ð¾Ð¹ Ð¾Ñ€Ð³Ð°Ð½Ð¸Ð·Ð°Ñ†Ð¸ÐµÐ¹:
+    - **`{orgId}` в path** — для операций управления конкретной организацией:
       - `/organizations/{orgId}/*` (members, invites, invite-links, audit-log)
     
-    - Ð•ÑÐ»Ð¸ Ð¾Ð±Ð° Ð¿Ñ€Ð¸ÑÑƒÑ‚ÑÑ‚Ð²ÑƒÑŽÑ‚ â€” Ð´Ð¾Ð»Ð¶Ð½Ñ‹ ÑÐ¾Ð²Ð¿Ð°Ð´Ð°Ñ‚ÑŒ, Ð¸Ð½Ð°Ñ‡Ðµ 403.
+    - Если оба присутствуют — должны совпадать, иначе 403.
     
-    ## Ð¡Ð¸ÑÑ‚ÐµÐ¼Ð½Ñ‹Ðµ Ñ€Ð¾Ð»Ð¸
-    Ð Ð¾Ð»Ð¸ Ñ Ñ„Ð»Ð°Ð³Ð¾Ð¼ `isSystem: true` (Owner, Admin, Member, Guest) **Ð¿Ð¾Ð»Ð½Ð¾ÑÑ‚ÑŒÑŽ Ð½ÐµÐ¸Ð·Ð¼ÐµÐ½ÑÐµÐ¼Ñ‹**:
-    - âŒ ÐÐµÐ»ÑŒÐ·Ñ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ
-    - âŒ ÐÐµÐ»ÑŒÐ·Ñ Ð¸Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ (PUT Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ 403)
+    ## Системные роли
+    Роли с флагом `isSystem: true` (Owner, Admin, Member, Guest) **полностью неизменяемы**:
+    - ❌ Нельзя удалить
+    - ❌ Нельзя изменить (PUT возвращает 403)
     
-    Ð”Ð»Ñ ÐºÐ°ÑÑ‚Ð¾Ð¼Ð¸Ð·Ð°Ñ†Ð¸Ð¸ â€” ÑÐ¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ ÐºÐ¾Ð¿Ð¸ÑŽ Ñ€Ð¾Ð»Ð¸ Ñ Ð½Ð¾Ð²Ñ‹Ð¼ `code`.
+    Для кастомизации — создайте копию роли с новым `code`.
     
-    ## ÐšÐ¾Ð´Ñ‹ Ð¾ÑˆÐ¸Ð±Ð¾Ðº
-    | ÐšÐ¾Ð´ | ÐžÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ |
+    ## Коды ошибок
+    | Код | Описание |
     |-----|----------|
     | IAM-001 | Email already registered |
     | IAM-002 | Invalid invite token |
@@ -52,21 +52,21 @@ info:
     | IAM-020 | File too large |
     | IAM-021 | Domain not allowed |
     
-    ## Swagger UI Ð°Ð²Ñ‚Ð¾Ñ€Ð¸Ð·Ð°Ñ†Ð¸Ñ
-    - **Local**: Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐ¹Ñ‚Ðµ `OpenIdConnectLocal` (Authorization Code + PKCE)
-    - **Prod**: Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐ¹Ñ‚Ðµ `OpenIdConnectProd` (Authorization Code + PKCE)
-    - **Postman/ÑÐºÑ€Ð¸Ð¿Ñ‚Ñ‹**: Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐ¹Ñ‚Ðµ `BearerAuth` Ñ Ñ€ÑƒÑ‡Ð½Ñ‹Ð¼ Ð²Ð²Ð¾Ð´Ð¾Ð¼ Ñ‚Ð¾ÐºÐµÐ½Ð°
+    ## Swagger UI авторизация
+    - **Local**: используйте `OpenIdConnectLocal` (Authorization Code + PKCE)
+    - **Prod**: используйте `OpenIdConnectProd` (Authorization Code + PKCE)
+    - **Postman/скрипты**: используйте `BearerAuth` с ручным вводом токена
     
     ## Internal API
-    Endpoints Ñ Ñ‚ÐµÐ³Ð¾Ð¼ `Internal` Ð¿Ñ€ÐµÐ´Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ñ‹ **Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð´Ð»Ñ ÑÐµÑ€Ð²Ð¸ÑÐ¾Ð²/Ð¼Ð¾Ð´ÑƒÐ»ÐµÐ¹**:
-    - Ð”Ð¾ÑÑ‚ÑƒÐ¿ Ñ€Ð°Ð·Ñ€ÐµÑˆÑ‘Ð½ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð¸Ð· private network (Ð½Ðµ Ð¿ÑƒÐ±Ð»Ð¸ÐºÐ¾Ð²Ð°Ñ‚ÑŒ Ð½Ð° public ingress)
-    - ÐÑƒÑ‚ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ñ: `client_credentials` (scheme `InternalServiceAuth`)
-    - Ð¢Ñ€ÐµÐ±ÑƒÐµÑ‚ÑÑ scope `iam.internal` Ð¸ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° `aud`/`client_id`
-    - Ð ÐµÐºÐ¾Ð¼ÐµÐ½Ð´ÑƒÐµÑ‚ÑÑ mTLS Ð¼ÐµÐ¶Ð´Ñƒ ÑÐµÑ€Ð²Ð¸ÑÐ°Ð¼Ð¸
+    Endpoints с тегом `Internal` предназначены **только для сервисов/модулей**:
+    - Доступ разрешён только из private network (не публиковать на public ingress)
+    - Аутентификация: `client_credentials` (scheme `InternalServiceAuth`)
+    - Требуется scope `iam.internal` и проверка `aud`/`client_id`
+    - Рекомендуется mTLS между сервисами
 
-    -Internal Ð´Ð¾ÑÑ‚ÑƒÐ¿ÐµÐ½ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð¸Ð· private network
-    -Ð°ÑƒÑ‚ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ñ ÑÐµÑ€Ð²Ð¸ÑÐ¾Ð²: client_credentials + scope iam.internal + Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° aud/client_id
-    -Ñ€ÐµÐºÐ¾Ð¼ÐµÐ½Ð´ÑƒÐµÑ‚ÑÑ mTLS (mutual TLS â€” Ð²Ð·Ð°Ð¸Ð¼Ð½Ð°Ñ TLS-Ð°ÑƒÑ‚ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ñ ÑÐµÑ€Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ‚Ð°Ð¼Ð¸ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ð° Ð¸ ÑÐµÑ€Ð²ÐµÑ€Ð°)
+    -Internal доступен только из private network
+    -аутентификация сервисов: client_credentials + scope iam.internal + проверка aud/client_id
+    -рекомендуется mTLS (mutual TLS — взаимная TLS-аутентификация сертификатами клиента и сервера)
 
 
     
@@ -533,7 +533,7 @@ paths:
         
         **Implementation note:** Server MUST delete the old avatar file from S3/storage
         before (or after) saving the new one to prevent garbage accumulation.
-        Sequence: upload new â†’ update DB â†’ delete old â†’ audit log.
+        Sequence: upload new → update DB → delete old → audit log.
       operationId: uploadAvatar
       requestBody:
         required: true
@@ -2154,34 +2154,34 @@ components:
       scheme: bearer
       bearerFormat: JWT
       description: |
-        Ð ÑƒÑ‡Ð½Ð¾Ð¹ Ð²Ð²Ð¾Ð´ access_token (JWT) Ð¸Ð· Keycloak.
-        Ð”Ð»Ñ Postman, ÑÐºÑ€Ð¸Ð¿Ñ‚Ð¾Ð² Ð¸ CLI.
+        Ручной ввод access_token (JWT) из Keycloak.
+        Для Postman, скриптов и CLI.
 
     OpenIdConnectLocal:
       type: openIdConnect
       openIdConnectUrl: http://localhost:8085/realms/pmservices/.well-known/openid-configuration
       description: |
-        Swagger UI Ð°Ð²Ñ‚Ð¾Ñ€Ð¸Ð·Ð°Ñ†Ð¸Ñ Ð² Ð»Ð¾ÐºÐ°Ð»ÑŒÐ½Ð¾Ð¹ ÑÑ€ÐµÐ´Ðµ.
-        Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÑ‚ Authorization Code + PKCE flow.
+        Swagger UI авторизация в локальной среде.
+        Использует Authorization Code + PKCE flow.
 
     OpenIdConnectProd:
       type: openIdConnect
       openIdConnectUrl: https://auth.pmservices.io/realms/pmservices/.well-known/openid-configuration
       description: |
-        Swagger UI Ð°Ð²Ñ‚Ð¾Ñ€Ð¸Ð·Ð°Ñ†Ð¸Ñ Ð² production.
-        Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÑ‚ Authorization Code + PKCE flow.
+        Swagger UI авторизация в production.
+        Использует Authorization Code + PKCE flow.
 
     InternalServiceAuth:
       type: oauth2
       description: |
         **Service-to-service only.** 
         
-        Ð”Ð¾ÑÑ‚ÑƒÐ¿ Ñ€Ð°Ð·Ñ€ÐµÑˆÑ‘Ð½ Ð¸ÑÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ Ð¸Ð· private network.
-        Ð¢Ð¾ÐºÐµÐ½ Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÐµÑ‚ÑÑ Ð¿Ð¾ client_credentials, Ð´Ð¾Ð»Ð¶ÐµÐ½ ÑÐ¾Ð´ÐµÑ€Ð¶Ð°Ñ‚ÑŒ:
+        Доступ разрешён исключительно из private network.
+        Токен получается по client_credentials, должен содержать:
         - scope: `iam.internal`
         - audience: `pmservices-internal`
         
-        Ð ÐµÐºÐ¾Ð¼ÐµÐ½Ð´ÑƒÐµÑ‚ÑÑ mTLS Ð½Ð° Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚Ðµ.
+        Рекомендуется mTLS на транспорте.
       flows:
         clientCredentials:
           tokenUrl: https://auth.pmservices.io/realms/pmservices/protocol/openid-connect/token
@@ -2191,7 +2191,7 @@ components:
     InternalServiceAuthLocal:
       type: oauth2
       description: >
-        Service-to-service only (LOCAL). Ð”Ð»Ñ Ð»Ð¾ÐºÐ°Ð»ÑŒÐ½Ð¾Ð¹ ÑÑ€ÐµÐ´Ñ‹/Swagger.
+        Service-to-service only (LOCAL). Для локальной среды/Swagger.
       flows:
         clientCredentials:
           tokenUrl: http://localhost:8085/realms/pmservices/protocol/openid-connect/token
