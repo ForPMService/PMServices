@@ -9,35 +9,108 @@
 
     <style>
       body { margin: 0; }
+
+      /* Collapsible for "Коды ошибок" */
+      .pm-collapsible {
+        max-height: 260px;
+        overflow: hidden;
+        position: relative;
+      }
+      .pm-collapsible.pm-open {
+        max-height: none;
+      }
+      .pm-collapsible::after {
+        content: "";
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        height: 56px;
+        background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.65));
+        pointer-events: none;
+      }
+      .pm-collapsible.pm-open::after {
+        display: none;
+      }
+
+      .pm-collapsible-toggle {
+        margin: 10px 0 18px;
+      }
     </style>
   </head>
 
   <body>
     <div id="swagger-ui"></div>
 
-    <!-- Core bundle -->
     <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"></script>
-    <!-- Standalone preset (даёт topbar/Explore как на petstore) -->
     <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-standalone-preset.js"></script>
 
     <script>
-      window.ui = SwaggerUIBundle({
-        url: "./openapi.yaml",
-        dom_id: "#swagger-ui",
+      function setupErrorCodesCollapsible() {
+        const root = document.querySelector("#swagger-ui");
+        if (!root) return false;
 
+        // Swagger UI рендерит markdown в DOM; ищем заголовок "Коды ошибок"
+        const headings = Array.from(root.querySelectorAll("h2, h3"));
+        const h = headings.find(x => (x.textContent || "").trim().toLowerCase() === "коды ошибок");
+        if (!h) return false;
+
+        // Чтобы не сработало дважды при перерендерах
+        if (h.dataset.pmCollapsible === "1") return true;
+        h.dataset.pmCollapsible = "1";
+
+        // Собираем элементы секции до следующего заголовка того же уровня
+        const nodes = [];
+        let el = h.nextElementSibling;
+
+        while (el) {
+          const tag = (el.tagName || "").toLowerCase();
+          if (tag === "h2" || tag === "h3") break;
+          nodes.push(el);
+          el = el.nextElementSibling;
+        }
+        if (nodes.length === 0) return true;
+
+        // Оборачиваем секцию в контейнер
+        const wrap = document.createElement("div");
+        wrap.className = "pm-collapsible";
+        nodes[0].before(wrap);
+        nodes.forEach(n => wrap.appendChild(n));
+
+        // Кнопка переключения
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "btn pm-collapsible-toggle";
+        btn.textContent = "Показать все коды ошибок";
+
+        btn.addEventListener("click", () => {
+          const open = wrap.classList.toggle("pm-open");
+          btn.textContent = open ? "Свернуть коды ошибок" : "Показать все коды ошибок";
+        });
+
+        // Вставляем кнопку сразу после заголовка
+        h.after(btn);
+
+        return true;
+      }
+
+      window.ui = SwaggerUIBundle({
+        url: "./openapi.yaml?v=1",   // v=1 можно менять при правках, чтобы не ловить кеш
+        dom_id: "#swagger-ui",
         deepLinking: true,
         persistAuthorization: true,
-
-        // “Как на petstore”
-        presets: [
-          SwaggerUIBundle.presets.apis,
-          SwaggerUIStandalonePreset
-        ],
-        plugins: [
-          SwaggerUIBundle.plugins.DownloadUrl
-        ],
-        layout: "StandaloneLayout"
+        presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
+        plugins: [SwaggerUIBundle.plugins.DownloadUrl],
+        layout: "StandaloneLayout",
+        onComplete: () => {
+          setupErrorCodesCollapsible();
+          // на всякий случай: если UI дорендерит позже, попробуем ещё раз
+          setTimeout(setupErrorCodesCollapsible, 300);
+          setTimeout(setupErrorCodesCollapsible, 1200);
+        }
       });
+
+      // И ещё страховка на случаи поздних перерендеров:
+      const obs = new MutationObserver(() => setupErrorCodesCollapsible());
+      obs.observe(document.documentElement, { childList: true, subtree: true });
     </script>
   </body>
 </html>

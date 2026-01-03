@@ -27,8 +27,7 @@ info:
     
     Для кастомизации — создайте копию роли с новым `code`.
 
-    <details>
-    <summary><b>Коды ошибок</b> (нажмите, чтобы раскрыть)</summary>
+    Коды ошибок (нажмите, чтобы раскрыть)
 
     | Код | Описание |
     |-----|----------|
@@ -53,8 +52,6 @@ info:
     | IAM-019 | Invalid file format |
     | IAM-020 | File too large |
     | IAM-021 | Domain not allowed |
-
-    </details>
     
     ## Swagger UI авторизация
     - **Local**: используйте `OpenIdConnectLocal` (Authorization Code + PKCE)
