@@ -1,7 +1,7 @@
 ---
 name: EPIC
 about: EPIC
-title: "[EPIC"
+title: "[EPIC]"
 labels: Epic
 assignees: buhfan2
 
