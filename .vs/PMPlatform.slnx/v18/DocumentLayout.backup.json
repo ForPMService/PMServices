@@ -1,0 +1,166 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0F605509-365D-8171-8B3A-8125C7456502}|src\\BFF\\PM.BFF\\PM.BFF.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\bff\\pm.bff\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F605509-365D-8171-8B3A-8125C7456502}|src\\BFF\\PM.BFF\\PM.BFF.csproj|solutionrelative:src\\bff\\pm.bff\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F605509-365D-8171-8B3A-8125C7456502}|src\\BFF\\PM.BFF\\PM.BFF.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\bff\\pm.bff\\pm.bff.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{0F605509-365D-8171-8B3A-8125C7456502}|src\\BFF\\PM.BFF\\PM.BFF.csproj|solutionrelative:src\\bff\\pm.bff\\pm.bff.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9E3E7EB-56FC-7C46-7FD5-C5B6D98F4D9B}|src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\iam\\pm.iam.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9E3E7EB-56FC-7C46-7FD5-C5B6D98F4D9B}|src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj|solutionrelative:src\\iam\\pm.iam.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADBF755C-5566-C440-163F-72686991E279}|src\\Platform\\PM.Platform.Contracts\\PM.Platform.Contracts.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.contracts\\pm.platform.contracts.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{ADBF755C-5566-C440-163F-72686991E279}|src\\Platform\\PM.Platform.Contracts\\PM.Platform.Contracts.csproj|solutionrelative:src\\platform\\pm.platform.contracts\\pm.platform.contracts.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9E3E7EB-56FC-7C46-7FD5-C5B6D98F4D9B}|src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\iam\\pm.iam.api\\pm.iam.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{E9E3E7EB-56FC-7C46-7FD5-C5B6D98F4D9B}|src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj|solutionrelative:src\\iam\\pm.iam.api\\pm.iam.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9E3E7EB-56FC-7C46-7FD5-C5B6D98F4D9B}|src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\iam\\pm.iam.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E9E3E7EB-56FC-7C46-7FD5-C5B6D98F4D9B}|src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj|solutionrelative:src\\iam\\pm.iam.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F605509-365D-8171-8B3A-8125C7456502}|src\\BFF\\PM.BFF\\PM.BFF.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\bff\\pm.bff\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0F605509-365D-8171-8B3A-8125C7456502}|src\\BFF\\PM.BFF\\PM.BFF.csproj|solutionrelative:src\\bff\\pm.bff\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 12,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b31fdcc9-9133-59e6-a7d4-f89e6ffe9f5d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PM.BFF.http",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\BFF\\PM.BFF\\PM.BFF.http",
+              "RelativeDocumentMoniker": "src\\BFF\\PM.BFF\\PM.BFF.http",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\BFF\\PM.BFF\\PM.BFF.http",
+              "RelativeToolTip": "src\\BFF\\PM.BFF\\PM.BFF.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-01-31T17:21:06.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Api\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Api\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Api\\Properties\\launchSettings.json",
+              "RelativeToolTip": "src\\IAM\\PM.IAM.Api\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-31T17:03:49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\BFF\\PM.BFF\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "src\\BFF\\PM.BFF\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\BFF\\PM.BFF\\Properties\\launchSettings.json",
+              "RelativeToolTip": "src\\BFF\\PM.BFF\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-31T17:03:02.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PM.IAM.Api",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj",
+              "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj",
+              "RelativeToolTip": "src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-25T18:28:51.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PM.Platform.Contracts.csproj",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Contracts\\PM.Platform.Contracts.csproj",
+              "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Contracts\\PM.Platform.Contracts.csproj",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Contracts\\PM.Platform.Contracts.csproj",
+              "RelativeToolTip": "src\\Platform\\PM.Platform.Contracts\\PM.Platform.Contracts.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-25T17:45:44.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\BFF\\PM.BFF\\Program.cs",
+              "RelativeDocumentMoniker": "src\\BFF\\PM.BFF\\Program.cs",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\BFF\\PM.BFF\\Program.cs",
+              "RelativeToolTip": "src\\BFF\\PM.BFF\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T17:45:29.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Api\\Program.cs",
+              "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Api\\Program.cs",
+              "RelativeToolTip": "src\\IAM\\PM.IAM.Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T17:45:22.402Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

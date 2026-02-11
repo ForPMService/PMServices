@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/BFF/">
+    <Project Path="src/BFF/PM.BFF/PM.BFF.csproj" />
+  </Folder>
+  <Folder Name="/src/IAM/">
+    <Project Path="src/IAM/PM.IAM.Api/PM.IAM.Api.csproj" />
+    <Project Path="src/IAM/PM.IAM.Application/PM.IAM.Application.csproj" />
+    <Project Path="src/IAM/PM.IAM.Contracts/PM.IAM.Contracts.csproj" />
+    <Project Path="src/IAM/PM.IAM.Domain/PM.IAM.Domain.csproj" />
+    <Project Path="src/IAM/PM.IAM.Infrastructure/PM.IAM.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/">
+    <Project Path="src/Platform/PM.Platform.Contracts/PM.Platform.Contracts.csproj" />
+    <Project Path="src/Platform/PM.Platform.Core/PM.Platform.Core.csproj" />
+    <Project Path="src/Platform/PM.Platform.Infrastructure/PM.Platform.Infrastructure.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,69 @@
+services:
+  bff:
+    image: mcr.microsoft.com/dotnet/sdk:10.0
+    working_dir: /workspace
+    volumes:
+      - ../..:/workspace
+      - nuget_cache:/root/.nuget/packages
+    environment:
+      ASPNETCORE_URLS: "http://0.0.0.0:8080"
+      DOTNET_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      DOTNET_WATCH_SUPPRESS_LAUNCH_BROWSER: "1"
+
+      Redis__Host: "redis"
+      Redis__Port: "6379"
+      Redis__Password: "${REDIS_PASSWORD}"
+
+      # пригодится позже для OIDC (BFF ходит к Keycloak внутри сети)
+      Auth__Authority: "http://keycloak:8080/realms/${KEYCLOAK_REALM}"
+    command: >
+      dotnet watch
+      --project src/BFF/PM.BFF/PM.BFF.csproj
+      --artifacts-path /tmp/artifacts-bff
+      run --urls http://0.0.0.0:8080
+    depends_on:
+      iam-api:
+        condition: service_started
+      redis:
+        condition: service_healthy
+      keycloak:
+        condition: service_started
+    networks:
+      - backend
+    restart: unless-stopped
+
+  iam-api:
+    image: mcr.microsoft.com/dotnet/sdk:10.0
+    working_dir: /workspace
+    volumes:
+      - ../..:/workspace
+      - nuget_cache:/root/.nuget/packages
+    environment:
+      ASPNETCORE_URLS: "http://0.0.0.0:8081"
+      DOTNET_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      DOTNET_WATCH_SUPPRESS_LAUNCH_BROWSER: "1"
+
+      # Заготовки на будущее (Data Layer)
+      ConnectionStrings__IamDb: "Host=postgres-iam;Port=5432;Database=${IAM_PG_DB};Username=${IAM_PG_USER};Password=${IAM_PG_PASSWORD}"
+      Redis__Host: "redis"
+      Redis__Port: "6379"
+      Redis__Password: "${REDIS_PASSWORD}"
+    command: >
+      dotnet watch
+      --project src/IAM/PM.IAM.Api/PM.IAM.Api.csproj
+      --artifacts-path /tmp/artifacts-iam
+      run --urls http://0.0.0.0:8081
+    depends_on:
+      postgres-iam:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - backend
+      - db
+    restart: unless-stopped
+
+volumes:
+  nuget_cache:

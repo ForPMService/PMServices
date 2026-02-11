@@ -1,0 +1,6 @@
+@PM.IAM.Api_HostAddress = http://localhost:5107
+
+GET {{PM.IAM.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
