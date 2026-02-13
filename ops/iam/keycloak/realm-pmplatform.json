@@ -1,0 +1,64 @@
+{
+  "realm": "pmplatform",
+  "enabled": true,
+  "displayName": "PM Platform",
+
+  "registrationAllowed": false,
+  "resetPasswordAllowed": true,
+  "verifyEmail": true,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+
+  "sslRequired": "none",
+
+  "smtpServer": {
+    "host": "mailpit",
+    "port": "1025",
+    "from": "noreply@pmplatform.local",
+    "fromDisplayName": "PM Platform",
+    "ssl": "false",
+    "starttls": "false",
+    "auth": "false"
+  },
+
+  "accessTokenLifespan": 300,
+  "ssoSessionIdleTimeout": 1800,
+  "ssoSessionMaxLifespan": 36000,
+
+  "clients": [
+    {
+      "clientId": "bff-client",
+      "name": "BFF Service",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "bff-client-dev-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "redirectUris": [
+        "http://localhost:8090/*"
+      ],
+      "webOrigins": [
+        "http://localhost:8090"
+      ],
+      "attributes": {
+        "post.logout.redirect.uris": "http://localhost:8090/*",
+        "backchannel.logout.session.required": "true"
+      },
+      "defaultClientScopes": ["openid", "email", "profile"],
+      "optionalClientScopes": ["offline_access"]
+    }
+  ],
+
+  "roles": {
+    "realm": [
+      {
+        "name": "platform-user",
+        "description": "Default role for authenticated users"
+      }
+    ]
+  },
+
+  "defaultRoles": ["platform-user"]
+}

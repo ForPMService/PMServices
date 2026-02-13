@@ -1,0 +1,32 @@
+# Grafana datasources (auto-provisioned on startup)
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    editable: true
+
+  - name: Elasticsearch - Logs
+    type: elasticsearch
+    access: proxy
+    url: http://elasticsearch:9200
+    database: "otel-logs"
+    jsonData:
+      esVersion: "8.13.0"
+      timeField: "@timestamp"
+      logMessageField: body
+      logLevelField: severity_text
+    editable: true
+
+  - name: Elasticsearch - Traces
+    type: elasticsearch
+    access: proxy
+    url: http://elasticsearch:9200
+    database: "otel-traces"
+    jsonData:
+      esVersion: "8.13.0"
+      timeField: "@timestamp"
+    editable: true

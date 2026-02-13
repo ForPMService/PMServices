@@ -1,0 +1,28 @@
+# .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.cache
+project.lock.json
+*.nupkg
+**/packages/
+
+# IDE
+.idea/
+*.swp
+*~
+
+# Docker infra data (local volumes on host)
+elastic-data/
+grafana-data/
+prometheus-data/
+
+# Secrets — рабочий .env.iam НЕ в VCS, .env.iam.example — в VCS
+ops/iam/.env.iam
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store

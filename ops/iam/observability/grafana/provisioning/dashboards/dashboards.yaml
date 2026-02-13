@@ -1,0 +1,13 @@
+# Grafana dashboard provider (auto-provisioned on startup)
+apiVersion: 1
+
+providers:
+  - name: "PMPlatform"
+    orgId: 1
+    folder: "PMPlatform"
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards
+      foldersFromFilesStructure: false
