@@ -1,0 +1,42 @@
+# Grafana datasources — auto-provisioned при старте контейнера
+# Файл кладётся в ops/iam/observability/grafana/provisioning/datasources/datasources.yaml
+
+apiVersion: 1
+
+datasources:
+
+  # ── Prometheus: метрики от .NET сервисов + Keycloak ──────────
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    editable: true
+    jsonData:
+      timeInterval: "15s"
+
+  # ── Elasticsearch: логи из OTel Collector ─────────────────────
+  - name: Elasticsearch Logs
+    type: elasticsearch
+    access: proxy
+    url: http://elasticsearch:9200
+    database: "otel-logs"
+    editable: true
+    jsonData:
+      esVersion:        "8.13.0"
+      timeField:        "@timestamp"
+      logMessageField:  body
+      logLevelField:    severity_text
+      maxConcurrentShardRequests: 5
+
+  # ── Elasticsearch: трейсы из OTel Collector ───────────────────
+  - name: Elasticsearch Traces
+    type: elasticsearch
+    access: proxy
+    url: http://elasticsearch:9200
+    database: "otel-traces"
+    editable: true
+    jsonData:
+      esVersion:  "8.13.0"
+      timeField:  "@timestamp"
+      maxConcurrentShardRequests: 5

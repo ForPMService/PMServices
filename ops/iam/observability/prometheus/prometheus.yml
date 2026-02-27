@@ -1,37 +1,35 @@
 # ═══════════════════════════════════════════════════════════════
 # Prometheus scrape config
 #
-# Targets:
-#   - OTel Collector :8889  (метрики от .NET через OTLP)
-#   - BFF :8080/metrics     (Prometheus exporter в .NET)
-#   - IAM API :8080/metrics (Prometheus exporter в .NET)
-#   - Keycloak :8080/metrics (KC_METRICS_ENABLED=true)
+# Архитектура:
+#   .NET apps → OTLP → OTel Collector → prometheus exporter :8889
+#   Prometheus scrapes: OTel Collector (метрики от bff + iam-api + keycloak)
+#
+# НЕ scrape напрямую bff/iam-api — они пушат через OTLP в коллектор.
+# Keycloak метрики: OTel Collector сам их scrape-ит (prometheus/keycloak receiver)
 # ═══════════════════════════════════════════════════════════════
 
 global:
-  scrape_interval: 15s
+  scrape_interval:     15s
   evaluation_interval: 15s
+  external_labels:
+    environment: dev
 
 scrape_configs:
+
+  # ── OTel Collector: метрики от всех .NET сервисов ────────────
+  # Коллектор агрегирует bff + iam-api + keycloak через свои receivers.
+  # Один scrape вместо трёх — проще и стабильнее.
   - job_name: "otel-collector"
     static_configs:
       - targets: ["otel-collector:8889"]
+    # labels для удобства фильтрации в Grafana
+    metric_relabel_configs:
+      - source_labels: [service_name]
+        target_label: service
 
-  - job_name: "bff"
-    metrics_path: "/metrics"
+  # ── OTel Collector: самонаблюдение ───────────────────────────
+  # Метрики самого коллектора (очереди, дропы, latency)
+  - job_name: "otel-collector-internal"
     static_configs:
-      - targets: ["bff:8080"]
-    # BFF может быть недоступен (profile: full) — не ломаем Prometheus
-    scrape_interval: 30s
-
-  - job_name: "iam-api"
-    metrics_path: "/metrics"
-    static_configs:
-      - targets: ["iam-api:8080"]
-    scrape_interval: 30s
-
-  - job_name: "keycloak"
-    metrics_path: "/metrics"
-    static_configs:
-      - targets: ["keycloak:8080"]
-    scrape_interval: 30s
+      - targets: ["otel-collector:8888"]

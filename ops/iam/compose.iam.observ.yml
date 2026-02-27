@@ -1,0 +1,184 @@
+# ═══════════════════════════════════════════════════════════════
+# Observability overlay — OTel → Elasticsearch/Prometheus → Grafana/Kibana
+#
+# Запуск (из корня репозитория):
+#   docker compose -f ops\iam\compose.iam.yml `
+#                  -f ops\iam\compose.iam.dev.yml `
+#                  -f ops\iam\compose.iam.observ.yml `
+#                  --env-file ops\iam\.env.iam up -d
+#
+# Или просто: .\ops\iam\iam.ps1 observ
+#
+# UI после запуска:
+#   Grafana  → http://localhost:3000  (admin/admin)
+#   Kibana   → http://localhost:5601
+#   Prometheus → http://localhost:9090
+# ═══════════════════════════════════════════════════════════════
+
+services:
+
+  # ─────────────────────────────────────────────────────────────
+  # Extend bff: добавляем OTel env vars поверх dev overlay
+  # ─────────────────────────────────────────────────────────────
+  bff:
+    environment:
+      OTEL_EXPORTER_OTLP_ENDPOINT: "http://otel-collector:4317"
+      OTEL_EXPORTER_OTLP_PROTOCOL: "grpc"
+      OTEL_SERVICE_NAME: "bff"
+      OTEL_RESOURCE_ATTRIBUTES: "deployment.environment=dev,service.namespace=pmplatform"
+    depends_on:
+      otel-collector:
+        condition: service_started  # не service_healthy — в scratch-образе нет wget/curl
+
+  # ─────────────────────────────────────────────────────────────
+  # Extend iam-api: добавляем OTel env vars поверх dev overlay
+  # ─────────────────────────────────────────────────────────────
+  iam-api:
+    environment:
+      OTEL_EXPORTER_OTLP_ENDPOINT: "http://otel-collector:4317"
+      OTEL_EXPORTER_OTLP_PROTOCOL: "grpc"
+      OTEL_SERVICE_NAME: "iam-api"
+      OTEL_RESOURCE_ATTRIBUTES: "deployment.environment=dev,service.namespace=pmplatform"
+    depends_on:
+      otel-collector:
+        condition: service_started
+
+  # ─────────────────────────────────────────────────────────────
+  # OTel Collector — единая точка сбора трейсов, метрик, логов
+  #   ← принимает OTLP gRPC/HTTP от bff + iam-api  (backend сеть)
+  #   → шлёт в Elasticsearch (логи + трейсы)       (observ сеть)
+  #   → exposes /metrics:8889 для Prometheus scrape (observ сеть)
+  # ─────────────────────────────────────────────────────────────
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.121.0
+    volumes:
+      - ./observability/otel-collector/config.yaml:/etc/otelcol-contrib/config.yaml:ro
+    networks:
+      - backend   # принимает от bff + iam-api
+      - observ    # шлёт в ES + expose prometheus
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    # Healthcheck намеренно отсутствует: образ otel/opentelemetry-collector-contrib
+    # основан на scratch — нет shell/wget/curl. service_healthy никогда не наступит.
+    # OTel exporter в .NET переживает cold start коллектора без ошибок.
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+    restart: unless-stopped
+
+  # ─────────────────────────────────────────────────────────────
+  # Elasticsearch — хранилище логов и трейсов от OTel Collector
+  # Без security для dev (xpack.security.enabled=false)
+  # ─────────────────────────────────────────────────────────────
+  elasticsearch:
+    image: elasticsearch:8.13.4
+    environment:
+      discovery.type: single-node
+      ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+      xpack.security.enabled: "false"
+      # Уменьшаем watermarks для dev (диск не бесконечный)
+      cluster.routing.allocation.disk.threshold_enabled: "false"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    networks:
+      - observ
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=5s || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 60s
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1024M
+    restart: unless-stopped
+
+  # ─────────────────────────────────────────────────────────────
+  # Kibana — UI для просмотра логов и трейсов из Elasticsearch
+  # ─────────────────────────────────────────────────────────────
+  kibana:
+    image: kibana:8.13.4
+    ports:
+      - "127.0.0.1:5601:5601"
+    environment:
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+      TELEMETRY_ENABLED: "false"
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    networks:
+      - observ
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+    restart: unless-stopped
+
+  # ─────────────────────────────────────────────────────────────
+  # Prometheus — scrape метрик от OTel Collector + Keycloak
+  # ─────────────────────────────────────────────────────────────
+  prometheus:
+    image: prom/prometheus:v2.52.0
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.retention.time=7d"
+      - "--web.enable-lifecycle"
+    ports:
+      - "127.0.0.1:9090:9090"
+    volumes:
+      - ./observability/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    networks:
+      - observ
+      # Keycloak метрики scrape-ит OTel Collector (у него есть backend сеть).
+      # Prometheus ходит только в OTel Collector — ему backend не нужна.
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+    restart: unless-stopped
+
+  # ─────────────────────────────────────────────────────────────
+  # Grafana — дашборды для метрик (Prometheus) и логов (Elasticsearch)
+  # ─────────────────────────────────────────────────────────────
+  grafana:
+    image: grafana/grafana:10.4.2
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+      GF_FEATURE_TOGGLES_ENABLE: "traceqlEditor"
+    volumes:
+      - ./observability/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./observability/grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+      - elasticsearch
+    networks:
+      - observ
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+    restart: unless-stopped
+
+networks:
+  observ:   # изолированная сеть наблюдаемости
+            # otel-collector подключён к backend (принимает от bff/iam-api) и observ (шлёт в ES)
+
+volumes:
+  es_data:         # индексы Elasticsearch
+  prometheus_data: # TSDB метрик
+  grafana_data:    # настройки и кастомные дашборды
