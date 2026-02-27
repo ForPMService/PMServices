@@ -188,8 +188,8 @@ function Test-Containers {
             if (-not $j) { throw "контейнер $c не найден" }
             $nets = @($j[0].NetworkSettings.Networks.PSObject.Properties.Name)
             $want = @($expected[$c])
-            $extra   = $nets | Where-Object { $_ -notin $want }
-            $missing = $want | Where-Object { $_ -notin $nets }
+            $extra   = @($nets | Where-Object { $_ -notin $want })
+            $missing = @($want | Where-Object { $_ -notin $nets })
             if ($extra.Count -gt 0 -or $missing.Count -gt 0) {
                 throw ("${c}: лишние=[{0}] недостающие=[{1}]" -f ($extra -join ','), ($missing -join ','))
             }
