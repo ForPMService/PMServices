@@ -36,7 +36,7 @@ services:
   # ─────────────────────────────────────────────────────────────
   # bff:
   #   build:
-  #     context: ../../src/PM.BFF
+  #     context: ../../src/BFF/PM.BFF
   #     dockerfile: Dockerfile
   #   environment:
   #     ASPNETCORE_ENVIRONMENT: Development
@@ -72,10 +72,11 @@ services:
   # ─────────────────────────────────────────────────────────────
   # iam-api:
   #   build:
-  #     context: ../../src/PM.IAM.Api
+  #     context: ../../src/IAM/PM.IAM.Api
   #     dockerfile: Dockerfile
   #   environment:
   #     ASPNETCORE_ENVIRONMENT: Development
+  #     Redis__ConnectionString: "redis:6379,password=${REDIS_PASSWORD}"
   #     ConnectionStrings__IamDb: "Host=postgres-iam;Port=5432;Database=${IAM_PG_DB};Username=${IAM_APP_DB_USER};Password=${IAM_APP_DB_PASSWORD}"
   #     Keycloak__Authority: "http://keycloak:8080/realms/pmplatform"
   #   ports:
