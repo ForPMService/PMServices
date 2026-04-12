@@ -15,4 +15,9 @@
     <Project Path="src/Platform/PM.Platform.Core/PM.Platform.Core.csproj" />
     <Project Path="src/Platform/PM.Platform.Infrastructure/PM.Platform.Infrastructure.csproj" />
   </Folder>
+  <Folder Name="/Элементы решения/">
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
 </Solution>
