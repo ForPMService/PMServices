@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PM.Platform.Contracts")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a078c51ab71943fe4b9d604be849bff75da0156c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+446fbaeb59923fb658603a23b0bd7a4e62d0f84c")]
 [assembly: System.Reflection.AssemblyProductAttribute("PM.Platform.Contracts")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PM.Platform.Contracts")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
