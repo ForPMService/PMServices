@@ -15,4 +15,8 @@
 	  </PackageReference>
 	</ItemGroup>
 
+	<ItemGroup>
+		<Protobuf Include="Protos\common.proto" GrpcServices="Both" />
+	</ItemGroup>
+
 </Project>
