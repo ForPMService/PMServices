@@ -1,1 +1,3 @@
-﻿
+﻿// TODO: after TASK-007 smoke validation, evaluate replacing UuidValue with plain string for request id fields.
+syntax = "proto3";
+
