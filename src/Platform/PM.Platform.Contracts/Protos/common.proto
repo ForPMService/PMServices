@@ -3,7 +3,7 @@ option csharp_namespace = "PM.Platform.Contracts.Protos.Common";
 package Contracts.Protos.Common;
 
 message UUid7 {
-  string UUid7 = 1;
+  string Value = 1;
 }
 
 

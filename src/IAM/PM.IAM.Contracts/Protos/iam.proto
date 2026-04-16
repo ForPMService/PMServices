@@ -9,8 +9,8 @@ service PermissionService {
 }
 
 message CheckPermissionRequest {
-  Contracts.Protos.Common.UUid7 RequestUser_Id = 1;
-  Contracts.Protos.Common.UUid7 Organization_Id = 2;
+  .Contracts.Protos.Common.UUid7 RequestUser_Id = 1;
+  .Contracts.Protos.Common.UUid7 Organization_Id = 2;
   string Permission = 3;
 
 }
