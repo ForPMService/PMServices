@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PM.Platform.Core.Exeptions
+namespace PM.Platform.Core.Exceptions
 {
     public sealed class NotFoundException : Exception
     {

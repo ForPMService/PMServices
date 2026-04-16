@@ -1,4 +1,4 @@
-﻿namespace PM.Platform.Core.Exeptions;
+﻿namespace PM.Platform.Core.Exceptions;
 
 public sealed class DomainException: Exception
 {
