@@ -9,12 +9,13 @@ service PermissionService {
 }
 
 message CheckPermissionRequest {
-  .pm.platform.contracts.common.UUid7 RequestUser_Id = 1;
-  .pm.platform.contracts.common.UUid7 Organization_Id = 2;
-  string Permission = 3;
+  .pm.platform.contracts.common.UUid7 request_user_id = 1;
+  .pm.platform.contracts.common.UUid7 organization_id = 2;
+  string permission = 3;
+  optional string resource_id = 4;
 
 }
 message CheckPermissionResponse {
-  bool HasPermission = 1;
-  string Reason = 2;
+  bool has_permission = 1;
+  string reason = 2;
 }
