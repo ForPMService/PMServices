@@ -1,6 +1,0 @@
-﻿syntax = "proto3";
-option csharp_namespace = "PM.IAM.Contracts.Protos.Common";
-
-message UUid7 {
-	string value = 1;
-}
