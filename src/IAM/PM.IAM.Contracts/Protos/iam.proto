@@ -1,3 +1,8 @@
 ﻿// TODO: after TASK-007 smoke validation, evaluate replacing UuidValue with plain string for request id fields.
 syntax = "proto3";
+option csharp_namespace = "PM.IAM.Contracts.Protos.IAM";
+
+message UUid7{
+	string value = 1;
+}
 

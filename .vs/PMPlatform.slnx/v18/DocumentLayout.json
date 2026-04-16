@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8933FE4D-BCB6-2CFE-2A51-4B6545CD06DE}|src\\IAM\\PM.IAM.Contracts\\PM.IAM.Contracts.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\iam\\pm.iam.contracts\\protos\\common.proto||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{8933FE4D-BCB6-2CFE-2A51-4B6545CD06DE}|src\\IAM\\PM.IAM.Contracts\\PM.IAM.Contracts.csproj|solutionrelative:src\\iam\\pm.iam.contracts\\protos\\common.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8933FE4D-BCB6-2CFE-2A51-4B6545CD06DE}|src\\IAM\\PM.IAM.Contracts\\PM.IAM.Contracts.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\iam\\pm.iam.contracts\\protos\\iam.proto||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{8933FE4D-BCB6-2CFE-2A51-4B6545CD06DE}|src\\IAM\\PM.IAM.Contracts\\PM.IAM.Contracts.csproj|solutionrelative:src\\iam\\pm.iam.contracts\\protos\\iam.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8933FE4D-BCB6-2CFE-2A51-4B6545CD06DE}|src\\IAM\\PM.IAM.Contracts\\PM.IAM.Contracts.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\iam\\pm.iam.contracts\\pm.iam.contracts.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{8933FE4D-BCB6-2CFE-2A51-4B6545CD06DE}|src\\IAM\\PM.IAM.Contracts\\PM.IAM.Contracts.csproj|solutionrelative:src\\iam\\pm.iam.contracts\\pm.iam.contracts.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
@@ -22,8 +30,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "iam.proto",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Contracts\\Protos\\iam.proto",
+              "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Contracts\\Protos\\iam.proto",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Contracts\\Protos\\iam.proto",
+              "RelativeToolTip": "src\\IAM\\PM.IAM.Contracts\\Protos\\iam.proto",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
+              "WhenOpened": "2026-04-16T09:24:00.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "common.proto",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Contracts\\Protos\\common.proto",
+              "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Contracts\\Protos\\common.proto",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Contracts\\Protos\\common.proto",
+              "RelativeToolTip": "src\\IAM\\PM.IAM.Contracts\\Protos\\common.proto",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
+              "WhenOpened": "2026-04-16T09:23:45.661Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -54,33 +88,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "PM.Platform.Contracts.csproj",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Contracts\\PM.Platform.Contracts.csproj",
               "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Contracts\\PM.Platform.Contracts.csproj",
               "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Contracts\\PM.Platform.Contracts.csproj",
               "RelativeToolTip": "src\\Platform\\PM.Platform.Contracts\\PM.Platform.Contracts.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-04-12T10:19:55.26Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "PM.IAM.Contracts.csproj",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Contracts\\PM.IAM.Contracts.csproj",
               "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Contracts\\PM.IAM.Contracts.csproj",
               "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Contracts\\PM.IAM.Contracts.csproj",
               "RelativeToolTip": "src\\IAM\\PM.IAM.Contracts\\PM.IAM.Contracts.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAACQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-04-12T09:31:19.404Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "PM.IAM.Api.csproj",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj",
               "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj",
