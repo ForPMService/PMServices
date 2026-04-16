@@ -31,73 +31,73 @@ services:
       - "127.0.0.1:${MAILPIT_WEB_PORT}:8025"
       - "127.0.0.1:${MAILPIT_SMTP_PORT}:1025"
 
-  # ─────────────────────────────────────────────────────────────
-  # BFF (PM.BFF) — добавить когда готов Dockerfile
-  # ─────────────────────────────────────────────────────────────
-  # bff:
-  #   build:
-  #     context: ../../src/BFF/PM.BFF
-  #     dockerfile: Dockerfile
-  #   environment:
-  #     ASPNETCORE_ENVIRONMENT: Development
-  #     Redis__ConnectionString: "redis:6379,password=${REDIS_PASSWORD}"
-  #     Keycloak__Authority: "http://keycloak:8080/realms/pmplatform"
-  #     Keycloak__ClientId: bff
-  #     Keycloak__ClientSecret: "${BFF_CLIENT_SECRET}"
-  #   ports:
-  #     - "127.0.0.1:${BFF_PORT}:8080"
-  #   networks:
-  #     - frontend
-  #     - backend
-  #   depends_on:
-  #     redis:
-  #       condition: service_healthy
-  #     keycloak:
-  #       condition: service_healthy
-  #   healthcheck:
-  #     test: ["CMD-SHELL", "curl -fsS http://localhost:8080/health || exit 1"]
-  #     interval: 10s
-  #     timeout: 3s
-  #     retries: 10
-  #     start_period: 30s
-  #   deploy:
-  #     resources:
-  #       limits:
-  #         cpus: "1.0"
-  #         memory: 256M
-  #   restart: unless-stopped
+ # ─────────────────────────────────────────────────────────────
+ # BFF (PM.BFF) — добавить когда готов Dockerfile
+ # ─────────────────────────────────────────────────────────────
+  bff:
+    build:
+      context: ../..
+      dockerfile: src/BFF/PM.BFF/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      Redis__ConnectionString: "redis:6379,password=${REDIS_PASSWORD}"
+      Keycloak__Authority: "http://keycloak:8080/realms/pmplatform"
+      Keycloak__ClientId: bff
+      Keycloak__ClientSecret: "${BFF_CLIENT_SECRET}"
+    ports:
+      - "127.0.0.1:${BFF_PORT}:8080"
+    networks:
+      - frontend
+      - backend
+    depends_on:
+      redis:
+        condition: service_healthy
+      keycloak:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8080/health || exit 1"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+      start_period: 30s
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 256M
+    restart: unless-stopped
 
   # ─────────────────────────────────────────────────────────────
   # IAM API (PM.IAM.Api) — добавить когда готов Dockerfile
   # ─────────────────────────────────────────────────────────────
-  # iam-api:
-  #   build:
-  #     context: ../../src/IAM/PM.IAM.Api
-  #     dockerfile: Dockerfile
-  #   environment:
-  #     ASPNETCORE_ENVIRONMENT: Development
-  #     Redis__ConnectionString: "redis:6379,password=${REDIS_PASSWORD}"
-  #     ConnectionStrings__IamDb: "Host=postgres-iam;Port=5432;Database=${IAM_PG_DB};Username=${IAM_APP_DB_USER};Password=${IAM_APP_DB_PASSWORD}"
-  #     Keycloak__Authority: "http://keycloak:8080/realms/pmplatform"
-  #   ports:
-  #     - "127.0.0.1:${IAM_API_PORT}:8081"
-  #   networks:
-  #     - backend
-  #     - db
-  #   depends_on:
-  #     postgres-iam:
-  #       condition: service_healthy
-  #     keycloak:
-  #       condition: service_healthy
-  #   healthcheck:
-  #     test: ["CMD-SHELL", "curl -fsS http://localhost:8081/health || exit 1"]
-  #     interval: 10s
-  #     timeout: 3s
-  #     retries: 10
-  #     start_period: 30s
-  #   deploy:
-  #     resources:
-  #       limits:
-  #         cpus: "1.0"
-  #         memory: 256M
-  #   restart: unless-stopped
+  iam-api:
+    build:
+      context: ../..
+      dockerfile: src/IAM/PM.IAM.Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      Redis__ConnectionString: "redis:6379,password=${REDIS_PASSWORD}"
+      ConnectionStrings__IamDb: "Host=postgres-iam;Port=5432;Database=${IAM_PG_DB};Username=${IAM_APP_DB_USER};Password=${IAM_APP_DB_PASSWORD}"
+      Keycloak__Authority: "http://keycloak:8080/realms/pmplatform"
+    ports:
+      - "127.0.0.1:${IAM_API_PORT}:8080"
+    networks:
+      - backend
+      - db
+    depends_on:
+      postgres-iam:
+        condition: service_healthy
+      keycloak:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8080/health || exit 1"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+      start_period: 30s
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 256M
+    restart: unless-stopped
