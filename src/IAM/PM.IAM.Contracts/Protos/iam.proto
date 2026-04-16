@@ -1,7 +1,7 @@
 ﻿// TODO: after TASK-007 smoke validation, evaluate replacing UuidValue with plain string for request id fields.
 syntax = "proto3";
-option csharp_namespace = "PM.IAM.Contracts.Protos.IAM";
-package IAM.Contracts.Protos.IAM;
+option csharp_namespace = "PM.IAM.Contracts";
+package pm.iam.contracts.iam;
 import "common.proto";
 
 service PermissionService {
@@ -9,8 +9,8 @@ service PermissionService {
 }
 
 message CheckPermissionRequest {
-  .Contracts.Protos.Common.UUid7 RequestUser_Id = 1;
-  .Contracts.Protos.Common.UUid7 Organization_Id = 2;
+  .pm.platform.contracts.common.UUid7 RequestUser_Id = 1;
+  .pm.platform.contracts.common.UUid7 Organization_Id = 2;
   string Permission = 3;
 
 }

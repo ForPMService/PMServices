@@ -1,9 +1,9 @@
 ﻿syntax = "proto3";
-option csharp_namespace = "PM.Platform.Contracts.Protos.Common";
-package Contracts.Protos.Common;
+option csharp_namespace = "PM.Platform.Contracts";
+package pm.platform.contracts.common;
 
 message UUid7 {
-  string Value = 1;
+  string value = 1;
 }
 
 
