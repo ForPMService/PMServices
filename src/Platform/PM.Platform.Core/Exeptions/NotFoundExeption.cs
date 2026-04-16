@@ -4,10 +4,10 @@ using System.Text;
 
 namespace PM.Platform.Core.Exeptions
 {
-    public sealed class NotFoundExeption : Exception
+    public sealed class NotFoundException : Exception
     {
-        public NotFoundExeption(string message) : base(message) { }
+        public NotFoundException(string message) : base(message) { }
 
-        public NotFoundExeption(string message, Exception innerException) : base(message, innerException) { }
+        public NotFoundException(string message, Exception innerException) : base(message, innerException) { }
     }
 }

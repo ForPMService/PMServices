@@ -5,10 +5,10 @@ using System.Text;
 
 namespace PM.Platform.Core.Domain.Audit
 {
-    internal interface IAuditableEntity
+    public interface IAuditableEntity
     {
-        DataSetDateTime CreatedDate { get; set; }
-        DataSetDateTime? UpdatedDate { get; set; }
+        DateTime CreatedDate { get; set; }
+        DateTime? UpdatedDate { get; set; }
 
         string CreatedByActor { get; set; }
         string? UpdatedByActor { get; set; }

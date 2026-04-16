@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.core\\exeptions\\notfoundexeption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|solutionrelative:src\\platform\\pm.platform.core\\exeptions\\notfoundexeption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.core\\exeptions\\domainexeption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|solutionrelative:src\\platform\\pm.platform.core\\exeptions\\domainexeption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.core\\exeptions\\platformexeption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|solutionrelative:src\\platform\\pm.platform.core\\exeptions\\platformexeption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.core\\domain\\audit\\iauditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|solutionrelative:src\\platform\\pm.platform.core\\domain\\audit\\iauditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.core\\domain\\events\\idomainevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|solutionrelative:src\\platform\\pm.platform.core\\domain\\events\\idomainevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.core\\domain\\audit\\iauditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|solutionrelative:src\\platform\\pm.platform.core\\domain\\audit\\iauditableentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.core\\exeptions\\notfoundexeption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|solutionrelative:src\\platform\\pm.platform.core\\exeptions\\notfoundexeption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.core\\exeptions\\domainexeption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|solutionrelative:src\\platform\\pm.platform.core\\exeptions\\domainexeption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.core\\domain\\entities\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,63 +34,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "NotFoundExeption.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Exeptions\\NotFoundExeption.cs",
               "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Core\\Exeptions\\NotFoundExeption.cs",
               "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Exeptions\\NotFoundExeption.cs",
               "RelativeToolTip": "src\\Platform\\PM.Platform.Core\\Exeptions\\NotFoundExeption.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-16T16:23:52.952Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PlatformExeption.cs",
-              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Exeptions\\PlatformExeption.cs",
-              "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Core\\Exeptions\\PlatformExeption.cs",
-              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Exeptions\\PlatformExeption.cs",
-              "RelativeToolTip": "src\\Platform\\PM.Platform.Core\\Exeptions\\PlatformExeption.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T16:22:57.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "IDomainEvent.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Domain\\Events\\IDomainEvent.cs",
               "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Core\\Domain\\Events\\IDomainEvent.cs",
               "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Domain\\Events\\IDomainEvent.cs",
               "RelativeToolTip": "src\\Platform\\PM.Platform.Core\\Domain\\Events\\IDomainEvent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-16T16:21:48.604Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "IAuditableEntity.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Domain\\Audit\\IAuditableEntity.cs",
               "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Core\\Domain\\Audit\\IAuditableEntity.cs",
               "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Domain\\Audit\\IAuditableEntity.cs",
               "RelativeToolTip": "src\\Platform\\PM.Platform.Core\\Domain\\Audit\\IAuditableEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-16T15:53:27.779Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "IEntity.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Domain\\Entities\\IEntity.cs",
               "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Core\\Domain\\Entities\\IEntity.cs",
@@ -107,13 +90,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "DomainExeption.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Exeptions\\DomainExeption.cs",
               "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Core\\Exeptions\\DomainExeption.cs",
               "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Exeptions\\DomainExeption.cs",
               "RelativeToolTip": "src\\Platform\\PM.Platform.Core\\Exeptions\\DomainExeption.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-16T15:48:26.178Z",
               "EditorCaption": ""
@@ -148,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "PM.IAM.Api.csproj",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj",
               "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj",

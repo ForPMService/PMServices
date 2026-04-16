@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PM.Platform.Core.Domain.Events
 {
-    internal interface IDomainEvent
+    public interface IDomainEvent
     {
     }
 }

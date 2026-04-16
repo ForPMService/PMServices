@@ -1,8 +1,8 @@
-﻿namespace PM.Platform.Core;
+﻿namespace PM.Platform.Core.Exeptions;
 
-public sealed class DomainExeption: Exception
+public sealed class DomainException: Exception
 {
-    public DomainExeption(string message) : base(message) { }
+    public DomainException(string message) : base(message) { }
 
-    public DomainExeption(string message, Exception innerException) : base(message, innerException) { }
+    public DomainException(string message, Exception innerException) : base(message, innerException) { }
 }
