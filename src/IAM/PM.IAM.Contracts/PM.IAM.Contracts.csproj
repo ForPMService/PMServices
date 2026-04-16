@@ -10,11 +10,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\Platform\PM.Platform.Contracts\PM.Platform.Contracts.csproj" />
+		<ProjectReference Include="..\\..\Platform\PM.Platform.Contracts\PM.Platform.Contracts.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Protobuf Include="Protos\iam.proto" GrpcServices="Both" ProtoRoot ="Protos" AdditionalImportDirs ="..\..Platform\PM.Platform.Contracts\Protos"/>
+		<Protobuf Include="Protos\iam.proto" GrpcServices="Both" ProtoRoot ="Protos" AdditionalImportDirs ="..\\..Platform\PM.Platform.Contracts\Protos"/>
 	</ItemGroup>
 
 	<PropertyGroup>

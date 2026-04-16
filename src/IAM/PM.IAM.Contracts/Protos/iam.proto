@@ -2,15 +2,15 @@
 syntax = "proto3";
 option csharp_namespace = "PM.IAM.Contracts.Protos.IAM";
 package IAM.Contracts.Protos.IAM;
-import "src/Platform/PM.Platform.Contracts/Protos/common.proto";
+import "common.proto";
 
 service PermissionService {
   rpc Check (CheckPermissionRequest) returns (CheckPermissionResponse);
 }
 
 message CheckPermissionRequest {
-  .Contracts.Protos.Common.UUid7 RequestUser_Id = 1;
-  .Contracts.Protos.Common.UUid7 Organization_Id = 2;
+  Contracts.Protos.Common.UUid7 RequestUser_Id = 1;
+  Contracts.Protos.Common.UUid7 Organization_Id = 2;
   string Permission = 3;
 
 }
