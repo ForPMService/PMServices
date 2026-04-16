@@ -19,5 +19,7 @@
     <File Path=".gitignore" />
     <File Path="Directory.Build.props" />
     <File Path="Directory.Packages.props" />
+    <File Path="ops/iam/iam.ps1" />
+    <File Path="Test-IamInfra.ps1" />
   </Folder>
 </Solution>

@@ -87,17 +87,17 @@ switch ($Command) {
     }
 
     "up" {
-        Write-Host "🚀 Запуск dev окружения (инфра + bff + iam-api с hot-reload)..." -ForegroundColor Cyan
-        Write-Host "   Без observability. Для observability: .\ops\iam\iam.ps1 observ" -ForegroundColor DarkGray
-        Invoke-Compose $ComposeDev "up -d"
-        Write-Host ""
-        Write-Host "✅ Dev окружение запущено." -ForegroundColor Green
-        Write-Host "   Edge:     http://localhost:$EdgePort"
-        Write-Host "   BFF:      dotnet watch (hot-reload в контейнере)"
-        Write-Host "   IAM API:  dotnet watch (hot-reload в контейнере)"
-        Write-Host ""
-        Write-Host "   Логи BFF:     .\ops\iam\iam.ps1 logs bff"
-        Write-Host "   Логи IAM API: .\ops\iam\iam.ps1 logs iam-api"
+       Write-Host "🚀 Запуск dev окружения (инфра + bff + iam-api в runtime container режиме)..." -ForegroundColor Cyan
+       Write-Host "   Без observability. Для observability: .\ops\iam\iam.ps1 observ" -ForegroundColor DarkGray
+            Invoke-Compose $ComposeDev "up -d"
+       Write-Host ""
+       Write-Host "✅ Dev окружение запущено." -ForegroundColor Green
+       Write-Host "   Edge:     http://localhost:$EdgePort"
+       Write-Host "   BFF:      ASP.NET Core runtime container"
+       Write-Host "   IAM API:  ASP.NET Core runtime container"
+       Write-Host ""
+       Write-Host "   Логи BFF:     .\ops\iam\iam.ps1 logs bff"
+       Write-Host "   Логи IAM API: .\ops\iam\iam.ps1 logs iam-api"
     }
 
     "observ" {
@@ -193,7 +193,7 @@ switch ($Command) {
         Write-Host ""
         Write-Host "  КОМАНДЫ:" -ForegroundColor White
         Write-Host "    infra            Только инфраструктура (postgres, redis, keycloak, mailpit)"
-        Write-Host "    up               Инфра + BFF + IAM API с hot-reload"
+        Write-Host "    up               Инфра + BFF + IAM API в runtime container режиме"
         Write-Host "    observ           Всё: dev + Grafana/Kibana/Prometheus/OTel"
         Write-Host "    down             Остановить всё (данные в volumes сохраняются)"
         Write-Host "    logs [service]   Следить за логами (без сервиса — все)"
