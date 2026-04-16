@@ -14,7 +14,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Protobuf Include="Protos\iam.proto" GrpcServices="Both" />
+		<Protobuf Include="Protos\iam.proto" GrpcServices="Both" ProtoRoot ="Protos" AdditionalImports ="..\..Platform\PM.Platform.Contracts\Protos"/>
 	</ItemGroup>
 
 	<PropertyGroup>

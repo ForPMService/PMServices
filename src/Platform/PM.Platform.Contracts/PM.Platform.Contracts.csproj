@@ -16,7 +16,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Protobuf Include="Protos\common.proto" GrpcServices="None" />
+		<Protobuf Include="Protos\common.proto" GrpcServices="None" ProtoRoot ="Protos"/>
 	</ItemGroup>
 
 </Project>
