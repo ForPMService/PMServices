@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.HttpOverrides;
 using PM.Platform.Infrastructure;
 using PM.Platform.Infrastructure.Redis;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,8 +24,11 @@ var app = builder.Build();
 
 app.UseForwardedHeaders();
 
-// Liveness
-app.MapHealthChecks("/health");
+// Liveness: no dependency checks (process liveness)
+app.MapHealthChecks("/health", new HealthCheckOptions { Predicate = _ => false });
+
+// Readiness: check dependencies such as Redis (tagged as "ready")
+app.MapHealthChecks("/health/ready", new HealthCheckOptions { Predicate = r => r.Tags.Contains("ready") });
 
 // Дальше появятся:
 // - cookie session + CSRF

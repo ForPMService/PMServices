@@ -14,11 +14,14 @@ public static class HealthChecksServiceCollectionExtensions
     {
         var healthChecksBuilder = service.AddHealthChecks();
 
-        // If Redis connection multiplexer is registered we add a simple health check for it.
+        // Если в IServiceCollection зарегистрирован IConnectionMultiplexer, добавляем простую health-проверку для Redis.
+        // ПРИМЕЧАНИЕ: это зависит от порядка регистрации — проверка Redis будет добавлена только в том случае,
+        // если AddRedisToService был вызван раньше, чем AddHealthCheckToService.
         bool hasRedis = service.Any(sd => sd.ServiceType == typeof(IConnectionMultiplexer));
         if (hasRedis)
         {
-            healthChecksBuilder.AddCheck<RedisHealthCheck>("redis");
+            // Пометим проверку redis тегом "ready", чтобы readiness endpoint мог её отфильтровать.
+            healthChecksBuilder.AddCheck<RedisHealthCheck>("redis", tags: new[] { "ready" });
         }
 
         return service;
@@ -40,7 +43,8 @@ internal class RedisHealthCheck : IHealthCheck
         try
         {
             var db = _redis.GetDatabase();
-            await db.PingAsync().WaitAsync(cancellationToken).ConfigureAwait(false);
+            // PingAsync в StackExchange.Redis не принимает CancellationToken, вызываем без токена.
+            await db.PingAsync().ConfigureAwait(false);
             return HealthCheckResult.Healthy();
         }
         catch

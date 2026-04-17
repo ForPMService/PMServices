@@ -80,164 +80,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 14,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\89263\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1852628321\\Class1.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1852628321\\Class1.cs",
-              "ToolTip": "C:\\Users\\89263\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1852628321\\Class1.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1852628321\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T11:53:21.752Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\89263\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1769207696\\Class1.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1769207696\\Class1.cs",
-              "ToolTip": "C:\\Users\\89263\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1769207696\\Class1.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1769207696\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T11:53:19.24Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "PM.Platform.Infrastructure",
-              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj",
-              "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj",
-              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj",
-              "RelativeToolTip": "src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj",
-              "ViewState": "AgIAAAoAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-17T11:52:58.443Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Directory.Packages.props",
-              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\Directory.Packages.props",
-              "RelativeDocumentMoniker": "Directory.Packages.props",
-              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\Directory.Packages.props",
-              "RelativeToolTip": "Directory.Packages.props",
-              "ViewState": "AgIAAA8AAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2026-04-17T11:52:54.37Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Api\\Program.cs",
-              "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Api\\Program.cs",
-              "RelativeToolTip": "src\\IAM\\PM.IAM.Api\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T10:32:15.605Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\BFF\\PM.BFF\\Program.cs",
-              "RelativeDocumentMoniker": "src\\BFF\\PM.BFF\\Program.cs",
-              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\BFF\\PM.BFF\\Program.cs",
-              "RelativeToolTip": "src\\BFF\\PM.BFF\\Program.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAUwAYAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T10:27:21.893Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ObservabilityServiceCollectionExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
-              "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
-              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
-              "RelativeToolTip": "src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T10:00:36.751Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HealthChecksServiceCollectionExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\HealthCheck\\HealthChecksServiceCollectionExtensions.cs",
-              "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\HealthCheck\\HealthChecksServiceCollectionExtensions.cs",
-              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\HealthCheck\\HealthChecksServiceCollectionExtensions.cs",
-              "RelativeToolTip": "src\\Platform\\PM.Platform.Infrastructure\\HealthCheck\\HealthChecksServiceCollectionExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T10:00:31.089Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TelemetryOptions.cs",
-              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Options\\TelemetryOptions.cs",
-              "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\Options\\TelemetryOptions.cs",
-              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Options\\TelemetryOptions.cs",
-              "RelativeToolTip": "src\\Platform\\PM.Platform.Infrastructure\\Options\\TelemetryOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T10:00:22.051Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RedisOptions.cs",
-              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Options\\RedisOptions.cs",
-              "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\Options\\RedisOptions.cs",
-              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Options\\RedisOptions.cs",
-              "RelativeToolTip": "src\\Platform\\PM.Platform.Infrastructure\\Options\\RedisOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T10:00:12.29Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RedisServiceCollectionExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Redis\\RedisServiceCollectionExtensions.cs",
-              "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\Redis\\RedisServiceCollectionExtensions.cs",
-              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Redis\\RedisServiceCollectionExtensions.cs",
-              "RelativeToolTip": "src\\Platform\\PM.Platform.Infrastructure\\Redis\\RedisServiceCollectionExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T09:26:03.568Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PM.IAM.Infrastructure",
-              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj",
-              "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj",
-              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj",
-              "RelativeToolTip": "src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-17T07:06:10.264Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -268,6 +112,154 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\89263\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1852628321\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1852628321\\Class1.cs",
+              "ToolTip": "C:\\Users\\89263\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1852628321\\Class1.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1852628321\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T11:53:21.752Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\89263\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1769207696\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1769207696\\Class1.cs",
+              "ToolTip": "C:\\Users\\89263\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1769207696\\Class1.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1769207696\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T11:53:19.24Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PM.Platform.Infrastructure.csproj",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj",
+              "RelativeToolTip": "src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj",
+              "ViewState": "AgIAAAoAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-17T11:52:58.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Directory.Packages.props",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\Directory.Packages.props",
+              "RelativeDocumentMoniker": "Directory.Packages.props",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\Directory.Packages.props",
+              "RelativeToolTip": "Directory.Packages.props",
+              "ViewState": "AgIAAA8AAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-04-17T11:52:54.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Api\\Program.cs",
+              "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Api\\Program.cs",
+              "RelativeToolTip": "src\\IAM\\PM.IAM.Api\\Program.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAIBJwAgAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T10:32:15.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\BFF\\PM.BFF\\Program.cs",
+              "RelativeDocumentMoniker": "src\\BFF\\PM.BFF\\Program.cs",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\BFF\\PM.BFF\\Program.cs",
+              "RelativeToolTip": "src\\BFF\\PM.BFF\\Program.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAIBJwAcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T10:27:21.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ObservabilityServiceCollectionExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
+              "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
+              "RelativeToolTip": "src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAIBJwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T10:00:36.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HealthChecksServiceCollectionExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\HealthCheck\\HealthChecksServiceCollectionExtensions.cs",
+              "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\HealthCheck\\HealthChecksServiceCollectionExtensions.cs",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\HealthCheck\\HealthChecksServiceCollectionExtensions.cs",
+              "RelativeToolTip": "src\\Platform\\PM.Platform.Infrastructure\\HealthCheck\\HealthChecksServiceCollectionExtensions.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAArwDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T10:00:31.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TelemetryOptions.cs",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Options\\TelemetryOptions.cs",
+              "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\Options\\TelemetryOptions.cs",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Options\\TelemetryOptions.cs",
+              "RelativeToolTip": "src\\Platform\\PM.Platform.Infrastructure\\Options\\TelemetryOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T10:00:22.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RedisOptions.cs",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Options\\RedisOptions.cs",
+              "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\Options\\RedisOptions.cs",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Options\\RedisOptions.cs",
+              "RelativeToolTip": "src\\Platform\\PM.Platform.Infrastructure\\Options\\RedisOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T10:00:12.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RedisServiceCollectionExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Redis\\RedisServiceCollectionExtensions.cs",
+              "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\Redis\\RedisServiceCollectionExtensions.cs",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Redis\\RedisServiceCollectionExtensions.cs",
+              "RelativeToolTip": "src\\Platform\\PM.Platform.Infrastructure\\Redis\\RedisServiceCollectionExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T09:26:03.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PM.IAM.Infrastructure.csproj",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj",
+              "RelativeToolTip": "src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-17T07:06:10.264Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
               "Title": "NotFoundException.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Exceptions\\NotFoundException.cs",
@@ -276,8 +268,7 @@
               "RelativeToolTip": "src\\Platform\\PM.Platform.Core\\Exceptions\\NotFoundException.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T16:23:52.952Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-16T16:23:52.952Z"
             },
             {
               "$type": "Document",
@@ -289,8 +280,7 @@
               "RelativeToolTip": "src\\Platform\\PM.Platform.Core\\Domain\\Events\\IDomainEvent.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T16:21:48.604Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-16T16:21:48.604Z"
             },
             {
               "$type": "Document",
@@ -302,8 +292,7 @@
               "RelativeToolTip": "src\\Platform\\PM.Platform.Core\\Domain\\Audit\\IAuditableEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T15:53:27.779Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-16T15:53:27.779Z"
             },
             {
               "$type": "Document",
@@ -315,8 +304,7 @@
               "RelativeToolTip": "src\\Platform\\PM.Platform.Core\\Domain\\Entities\\IEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T15:51:04.209Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-16T15:51:04.209Z"
             },
             {
               "$type": "Document",
@@ -328,8 +316,7 @@
               "RelativeToolTip": "src\\Platform\\PM.Platform.Core\\Exceptions\\DomainException.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T15:48:26.178Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-16T15:48:26.178Z"
             },
             {
               "$type": "Document",
@@ -341,12 +328,7 @@
               "RelativeToolTip": "src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-12T09:14:12.916Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "WhenOpened": "2026-04-12T09:14:12.916Z"
             }
           ]
         }

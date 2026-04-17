@@ -1,5 +1,6 @@
 using PM.Platform.Infrastructure;
 using PM.Platform.Infrastructure.Redis;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,10 +17,10 @@ builder.Services.AddRouting();
 
 var app = builder.Build();
 
-// Liveness: процесс жив
-app.MapHealthChecks("/health");
+// Liveness: no dependency checks
+app.MapHealthChecks("/health", new HealthCheckOptions { Predicate = _ => false });
 
-// Readiness (пока будет тот же набор проверок)
-app.MapHealthChecks("/health/ready");
+// Readiness: include dependency checks (e.g. Redis tagged as "ready")
+app.MapHealthChecks("/health/ready", new HealthCheckOptions { Predicate = r => r.Tags.Contains("ready") });
 
 app.Run();

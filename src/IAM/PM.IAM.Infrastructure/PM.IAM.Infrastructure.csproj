@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <!-- OpenTelemetry and Redis provided by PM.Platform.Infrastructure -->
+    <!-- OpenTelemetry и Redis предоставляются PM.Platform.Infrastructure -->
   </ItemGroup>
 
   <ItemGroup>

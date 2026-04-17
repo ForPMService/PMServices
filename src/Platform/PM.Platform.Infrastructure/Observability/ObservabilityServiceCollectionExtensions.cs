@@ -14,47 +14,29 @@ public static class ObservabilityServiceCollectionExtensions
 {
     public static IServiceCollection AddObservabilityToService(this IServiceCollection services, IConfiguration configuration)
     {
-        // Register TelemetryOptions via options pattern
+        // Регистрируем TelemetryOptions через options pattern и включаем ValidateOnStart
         services.AddOptions<TelemetryOptions>()
-            .Bind(configuration.GetSection(TelemetryOptions.SectionName));
+            .Bind(configuration.GetSection(TelemetryOptions.SectionName))
+            .ValidateOnStart();
 
-        // Also read options locally for immediate configuration
-        TelemetryOptions telemetryOptions = new TelemetryOptions();
-        configuration.GetSection(TelemetryOptions.SectionName).Bind(telemetryOptions);
+        // Считываем сконфигурированные TelemetryOptions из построенного ServiceProvider для немедленной настройки
+        using var sp = services.BuildServiceProvider();
+        TelemetryOptions telemetryOptions = sp.GetRequiredService<IOptions<TelemetryOptions>>().Value;
 
         OpenTelemetryBuilder openTelemetryBuilder = services.AddOpenTelemetry();
 
-        ConfigureResource(openTelemetryBuilder, telemetryOptions);
+        // Настроим ресурс (имя сервиса/версия)
+        string serviceName = GetServiceName(telemetryOptions);
+        string serviceVersion = GetServiceVersion(telemetryOptions);
+        openTelemetryBuilder.ConfigureResource(rb => rb.AddService(serviceName: serviceName, serviceVersion: serviceVersion));
+
         ConfigureTracing(openTelemetryBuilder, telemetryOptions);
         ConfigureMetrics(openTelemetryBuilder, telemetryOptions);
 
         return services;
     }
 
-    private static void ConfigureResource(
-        OpenTelemetryBuilder openTelemetryBuilder,
-        TelemetryOptions telemetryOptions)
-    {
-        string serviceName = GetServiceName(telemetryOptions);
-        string serviceVersion = GetServiceVersion(telemetryOptions);
 
-        openTelemetryBuilder.ConfigureResource(
-            CreateResourceConfigurationAction(serviceName, serviceVersion));
-    }
-
-    private static Action<ResourceBuilder> CreateResourceConfigurationAction(
-        string serviceName,
-        string serviceVersion)
-    {
-
-        
-        void ResourceConfigurationAction(ResourceBuilder builder)
-        {
-            builder.AddService(serviceName: serviceName, serviceVersion: serviceVersion);
-        }
-
-        return ResourceConfigurationAction;
-    }
 
     private static void ConfigureTracing(OpenTelemetryBuilder openTelemetryBuilder, TelemetryOptions telemetryOptions)
     {
@@ -75,7 +57,8 @@ public static class ObservabilityServiceCollectionExtensions
             }
             else
             {
-                // best-effort: try to interpret as non-absolute URI via environment variable support
+                // Попытка по-форсу: если endpoint не абсолютный, просто подключаем экспортёр без явного Endpoint
+                // (в этом случае экспортёр может считывать настройки из переменных окружения)
                 tracingBuilder.AddOtlpExporter();
             }
         }
@@ -101,6 +84,7 @@ public static class ObservabilityServiceCollectionExtensions
             }
             else
             {
+                // То же поведение для метрик: если URI не абсолютный, подключаем экспортёр без явного endpoint
                 metricsBuilder.AddOtlpExporter();
             }
         }
