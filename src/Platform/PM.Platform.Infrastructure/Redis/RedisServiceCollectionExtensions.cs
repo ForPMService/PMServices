@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using StackExchange.Redis;
 
-namespace PM.IAM.Infrastructure.Redis;
+namespace PM.Platform.Infrastructure.Redis;
 
 public static class RedisServiceCollectionExtensions
 {

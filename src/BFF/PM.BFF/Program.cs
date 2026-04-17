@@ -1,7 +1,12 @@
 using Microsoft.AspNetCore.HttpOverrides;
+using PM.Platform.Infrastructure;
+using PM.Platform.Infrastructure.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddRedisToService(builder.Configuration);
+builder.Services.AddHealthCheckToService(builder.Configuration);
+builder.Services.AddObservabilityToService(builder.Configuration);
 // Важно для reverse-proxy (Nginx edge): корректные scheme/host в редиректах и логах
 builder.Services.Configure<ForwardedHeadersOptions>(o =>
 {

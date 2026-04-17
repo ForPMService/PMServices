@@ -1,4 +1,4 @@
-﻿namespace PM.IAM.Infrastructure;
+﻿namespace PM.Platform.Infrastructure;
 
 public class TelemetryOptions
 {
