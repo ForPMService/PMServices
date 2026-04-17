@@ -192,7 +192,7 @@
               "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
               "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
               "RelativeToolTip": "src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAIBJwCcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAABBwCYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-17T10:00:36.751Z",
               "EditorCaption": ""
@@ -205,7 +205,7 @@
               "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\HealthCheck\\HealthChecksServiceCollectionExtensions.cs",
               "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\HealthCheck\\HealthChecksServiceCollectionExtensions.cs",
               "RelativeToolTip": "src\\Platform\\PM.Platform.Infrastructure\\HealthCheck\\HealthChecksServiceCollectionExtensions.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAArwDcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAWwDcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-17T10:00:31.089Z",
               "EditorCaption": ""
@@ -254,9 +254,10 @@
               "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj",
               "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj",
               "RelativeToolTip": "src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAABBwBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-17T07:06:10.264Z"
+              "WhenOpened": "2026-04-17T07:06:10.264Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

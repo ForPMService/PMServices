@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
@@ -19,9 +18,9 @@ public static class ObservabilityServiceCollectionExtensions
             .Bind(configuration.GetSection(TelemetryOptions.SectionName))
             .ValidateOnStart();
 
-        // Считываем сконфигурированные TelemetryOptions из построенного ServiceProvider для немедленной настройки
-        using var sp = services.BuildServiceProvider();
-        TelemetryOptions telemetryOptions = sp.GetRequiredService<IOptions<TelemetryOptions>>().Value;
+        // Для немедленной настройки считываем значения из IConfiguration без создания временного ServiceProvider
+        TelemetryOptions telemetryOptions = new();
+        configuration.GetSection(TelemetryOptions.SectionName).Bind(telemetryOptions);
 
         OpenTelemetryBuilder openTelemetryBuilder = services.AddOpenTelemetry();
 
