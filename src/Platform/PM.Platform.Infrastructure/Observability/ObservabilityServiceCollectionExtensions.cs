@@ -49,9 +49,14 @@ public static class ObservabilityServiceCollectionExtensions
         string serviceName,
         string serviceVersion)
     {
-        return resourceBuilder => resourceBuilder.AddService(
-            serviceName: serviceName,
-            serviceVersion: serviceVersion);
+
+        
+        void ResourceConfigurationAction(ResourceBuilder builder)
+        {
+            builder.AddService(serviceName: serviceName, serviceVersion: serviceVersion);
+        }
+
+        return ResourceConfigurationAction;
     }
 
     private static void ConfigureTracing(OpenTelemetryBuilder openTelemetryBuilder)

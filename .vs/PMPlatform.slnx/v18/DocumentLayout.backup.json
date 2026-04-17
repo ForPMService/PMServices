@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1EA579BD-7280-2436-52AA-338D664E028F}|src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.infrastructure\\observability\\observabilityservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EA579BD-7280-2436-52AA-338D664E028F}|src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj|solutionrelative:src\\platform\\pm.platform.infrastructure\\observability\\observabilityservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E9E3E7EB-56FC-7C46-7FD5-C5B6D98F4D9B}|src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\iam\\pm.iam.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9E3E7EB-56FC-7C46-7FD5-C5B6D98F4D9B}|src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj|solutionrelative:src\\iam\\pm.iam.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F605509-365D-8171-8B3A-8125C7456502}|src\\BFF\\PM.BFF\\PM.BFF.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\bff\\pm.bff\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F605509-365D-8171-8B3A-8125C7456502}|src\\BFF\\PM.BFF\\PM.BFF.csproj|solutionrelative:src\\bff\\pm.bff\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1EA579BD-7280-2436-52AA-338D664E028F}|src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.infrastructure\\observability\\observabilityservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EA579BD-7280-2436-52AA-338D664E028F}|src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj|solutionrelative:src\\platform\\pm.platform.infrastructure\\observability\\observabilityservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1EA579BD-7280-2436-52AA-338D664E028F}|src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.infrastructure\\redis\\redisservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,11 +66,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Api\\Program.cs",
               "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Api\\Program.cs",
@@ -83,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\BFF\\PM.BFF\\Program.cs",
               "RelativeDocumentMoniker": "src\\BFF\\PM.BFF\\Program.cs",
@@ -96,13 +96,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ObservabilityServiceCollectionExtensions.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
               "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
               "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
               "RelativeToolTip": "src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAuwBgAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAIwGEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-17T10:00:36.751Z",
               "EditorCaption": ""
