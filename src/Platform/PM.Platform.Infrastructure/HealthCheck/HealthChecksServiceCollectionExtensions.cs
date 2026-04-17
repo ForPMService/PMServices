@@ -40,7 +40,7 @@ internal class RedisHealthCheck : IHealthCheck
         try
         {
             var db = _redis.GetDatabase();
-            await db.PingAsync(cancellationToken).ConfigureAwait(false);
+            await db.PingAsync().WaitAsync(cancellationToken).ConfigureAwait(false);
             return HealthCheckResult.Healthy();
         }
         catch
