@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1EA579BD-7280-2436-52AA-338D664E028F}|src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.infrastructure\\redis\\redisservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EA579BD-7280-2436-52AA-338D664E028F}|src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj|solutionrelative:src\\platform\\pm.platform.infrastructure\\redis\\redisservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1EA579BD-7280-2436-52AA-338D664E028F}|src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.infrastructure\\observability\\observabilityservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1EA579BD-7280-2436-52AA-338D664E028F}|src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj|solutionrelative:src\\platform\\pm.platform.infrastructure\\observability\\observabilityservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0F605509-365D-8171-8B3A-8125C7456502}|src\\BFF\\PM.BFF\\PM.BFF.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\bff\\pm.bff\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F605509-365D-8171-8B3A-8125C7456502}|src\\BFF\\PM.BFF\\PM.BFF.csproj|solutionrelative:src\\bff\\pm.bff\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1EA579BD-7280-2436-52AA-338D664E028F}|src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.infrastructure\\redis\\redisservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EA579BD-7280-2436-52AA-338D664E028F}|src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj|solutionrelative:src\\platform\\pm.platform.infrastructure\\redis\\redisservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1EA579BD-7280-2436-52AA-338D664E028F}|src\\Platform\\PM.Platform.Infrastructure\\PM.Platform.Infrastructure.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.infrastructure\\healthcheck\\healthchecksservicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,11 +66,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Api\\Program.cs",
               "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Api\\Program.cs",
@@ -83,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\BFF\\PM.BFF\\Program.cs",
               "RelativeDocumentMoniker": "src\\BFF\\PM.BFF\\Program.cs",
@@ -96,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ObservabilityServiceCollectionExtensions.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
               "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\Observability\\ObservabilityServiceCollectionExtensions.cs",
@@ -148,13 +148,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "RedisServiceCollectionExtensions.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Redis\\RedisServiceCollectionExtensions.cs",
               "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Infrastructure\\Redis\\RedisServiceCollectionExtensions.cs",
               "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Infrastructure\\Redis\\RedisServiceCollectionExtensions.cs",
               "RelativeToolTip": "src\\Platform\\PM.Platform.Infrastructure\\Redis\\RedisServiceCollectionExtensions.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-17T09:26:03.568Z",
               "EditorCaption": ""
