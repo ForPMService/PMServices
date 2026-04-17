@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CFCC4629-1BB7-0358-C43E-EDDC88DA2CDB}|src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\iam\\pm.iam.infrastructure\\pm.iam.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CFCC4629-1BB7-0358-C43E-EDDC88DA2CDB}|src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj|solutionrelative:src\\iam\\pm.iam.infrastructure\\pm.iam.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|c:\\users\\89263\\desktop\\project\\projectplatform\\pmservices\\src\\platform\\pm.platform.core\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8B96AD87-0F22-2A69-CA3D-2866281F90DE}|src\\Platform\\PM.Platform.Core\\PM.Platform.Core.csproj|solutionrelative:src\\platform\\pm.platform.core\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -34,8 +38,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PM.IAM.Infrastructure",
+              "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj",
+              "RelativeToolTip": "src\\IAM\\PM.IAM.Infrastructure\\PM.IAM.Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-17T07:06:10.264Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -66,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "NotFoundException.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Exceptions\\NotFoundException.cs",
               "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Core\\Exceptions\\NotFoundException.cs",
@@ -79,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "IDomainEvent.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Domain\\Events\\IDomainEvent.cs",
               "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Core\\Domain\\Events\\IDomainEvent.cs",
@@ -92,7 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "IAuditableEntity.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Domain\\Audit\\IAuditableEntity.cs",
               "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Core\\Domain\\Audit\\IAuditableEntity.cs",
@@ -105,7 +122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "IEntity.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Domain\\Entities\\IEntity.cs",
               "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Core\\Domain\\Entities\\IEntity.cs",
@@ -118,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DomainException.cs",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\Platform\\PM.Platform.Core\\Exceptions\\DomainException.cs",
               "RelativeDocumentMoniker": "src\\Platform\\PM.Platform.Core\\Exceptions\\DomainException.cs",
@@ -131,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "PM.IAM.Api.csproj",
               "DocumentMoniker": "C:\\Users\\89263\\Desktop\\Project\\ProjectPlatform\\PMServices\\src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj",
               "RelativeDocumentMoniker": "src\\IAM\\PM.IAM.Api\\PM.IAM.Api.csproj",
