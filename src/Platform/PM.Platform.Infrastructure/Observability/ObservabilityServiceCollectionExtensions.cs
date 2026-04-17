@@ -1,10 +1,12 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
+using OpenTelemetry.Exporter;
 
 namespace PM.Platform.Infrastructure;
 
@@ -12,26 +14,21 @@ public static class ObservabilityServiceCollectionExtensions
 {
     public static IServiceCollection AddObservabilityToService(this IServiceCollection services, IConfiguration configuration)
     {
-        TelemetryOptions telemetryOptions = CreateTelemetryOptions(configuration);
+        // Register TelemetryOptions via options pattern
+        services.AddOptions<TelemetryOptions>()
+            .Bind(configuration.GetSection(TelemetryOptions.SectionName));
+
+        // Also read options locally for immediate configuration
+        TelemetryOptions telemetryOptions = new TelemetryOptions();
+        configuration.GetSection(TelemetryOptions.SectionName).Bind(telemetryOptions);
 
         OpenTelemetryBuilder openTelemetryBuilder = services.AddOpenTelemetry();
 
         ConfigureResource(openTelemetryBuilder, telemetryOptions);
-        ConfigureTracing(openTelemetryBuilder);
-        ConfigureMetrics(openTelemetryBuilder);
+        ConfigureTracing(openTelemetryBuilder, telemetryOptions);
+        ConfigureMetrics(openTelemetryBuilder, telemetryOptions);
 
         return services;
-    }
-
-    private static TelemetryOptions CreateTelemetryOptions(IConfiguration configuration)
-    {
-        TelemetryOptions telemetryOptions = new();
-
-        configuration
-            .GetSection(TelemetryOptions.SectionName)
-            .Bind(telemetryOptions);
-
-        return telemetryOptions;
     }
 
     private static void ConfigureResource(
@@ -59,27 +56,54 @@ public static class ObservabilityServiceCollectionExtensions
         return ResourceConfigurationAction;
     }
 
-    private static void ConfigureTracing(OpenTelemetryBuilder openTelemetryBuilder)
+    private static void ConfigureTracing(OpenTelemetryBuilder openTelemetryBuilder, TelemetryOptions telemetryOptions)
     {
-        openTelemetryBuilder.WithTracing(ConfigureTracingBuilder);
+        openTelemetryBuilder.WithTracing(builder => ConfigureTracingBuilder(builder, telemetryOptions));
     }
 
-    private static void ConfigureTracingBuilder(TracerProviderBuilder tracingBuilder)
+    private static void ConfigureTracingBuilder(TracerProviderBuilder tracingBuilder, TelemetryOptions telemetryOptions)
     {
         tracingBuilder.AddAspNetCoreInstrumentation();
         tracingBuilder.AddHttpClientInstrumentation();
+
+        string? endpoint = GetOtlpEndpoint(telemetryOptions);
+        if (!string.IsNullOrWhiteSpace(endpoint))
+        {
+            if (Uri.TryCreate(endpoint, UriKind.Absolute, out var uri))
+            {
+                tracingBuilder.AddOtlpExporter(o => o.Endpoint = uri);
+            }
+            else
+            {
+                // best-effort: try to interpret as non-absolute URI via environment variable support
+                tracingBuilder.AddOtlpExporter();
+            }
+        }
     }
 
-    private static void ConfigureMetrics(OpenTelemetryBuilder openTelemetryBuilder)
+    private static void ConfigureMetrics(OpenTelemetryBuilder openTelemetryBuilder, TelemetryOptions telemetryOptions)
     {
-        openTelemetryBuilder.WithMetrics(ConfigureMetricsBuilder);
+        openTelemetryBuilder.WithMetrics(builder => ConfigureMetricsBuilder(builder, telemetryOptions));
     }
 
-    private static void ConfigureMetricsBuilder(MeterProviderBuilder metricsBuilder)
+    private static void ConfigureMetricsBuilder(MeterProviderBuilder metricsBuilder, TelemetryOptions telemetryOptions)
     {
         metricsBuilder.AddAspNetCoreInstrumentation();
         metricsBuilder.AddHttpClientInstrumentation();
         metricsBuilder.AddRuntimeInstrumentation();
+
+        string? endpoint = GetOtlpEndpoint(telemetryOptions);
+        if (!string.IsNullOrWhiteSpace(endpoint))
+        {
+            if (Uri.TryCreate(endpoint, UriKind.Absolute, out var uri))
+            {
+                metricsBuilder.AddOtlpExporter(o => o.Endpoint = uri);
+            }
+            else
+            {
+                metricsBuilder.AddOtlpExporter();
+            }
+        }
     }
 
     private static string GetServiceName(TelemetryOptions telemetryOptions)
@@ -100,6 +124,16 @@ public static class ObservabilityServiceCollectionExtensions
         }
 
         return "1.0.0";
+    }
+
+    private static string? GetOtlpEndpoint(TelemetryOptions telemetryOptions)
+    {
+        if (!string.IsNullOrWhiteSpace(telemetryOptions.OtelEndpoint))
+        {
+            return telemetryOptions.OtelEndpoint;
+        }
+
+        return Environment.GetEnvironmentVariable("OTEL_EXPORTER_OTLP_ENDPOINT");
     }
 }
 

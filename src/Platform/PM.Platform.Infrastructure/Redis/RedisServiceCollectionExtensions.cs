@@ -10,11 +10,11 @@ public static class RedisServiceCollectionExtensions
     public static IServiceCollection AddRedisToService(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddOptions<RedisOptions>()
-        .Bind(configuration.GetSection(RedisOptions.SectionName))
-        .Validate(
-            IsRedisOptionsIsValid,
-            $"В разделе конфигурации '{RedisOptions.SectionName}' должна содержаться непустая строка подключения")
-        .ValidateOnStart();
+            .Bind(configuration.GetSection(RedisOptions.SectionName))
+            .Validate(
+                IsConnectionStringProvided,
+                $"В разделе конфигурации '{RedisOptions.SectionName}' должна содержаться непустая строка подключения")
+            .ValidateOnStart();
 
         services.AddSingleton<IConnectionMultiplexer>(CreateRedisConnection);
 
@@ -32,7 +32,7 @@ public static class RedisServiceCollectionExtensions
         return ConnectionMultiplexer.Connect(options.ConnectionString);
     }
 
-    private static bool IsRedisOptionsIsValid(RedisOptions options)
+    private static bool IsConnectionStringProvided(RedisOptions options)
     {
         return !string.IsNullOrEmpty(options.ConnectionString);
     }

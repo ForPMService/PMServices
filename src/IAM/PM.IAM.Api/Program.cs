@@ -17,9 +17,9 @@ builder.Services.AddRouting();
 var app = builder.Build();
 
 // Liveness: процесс жив
-app.MapGet("/health", () => Results.Text("ok\n", "text/plain"));
+app.MapHealthChecks("/health");
 
-// Readiness: позже здесь будут проверки БД/Redis/Keycloak-доступности
-app.MapGet("/health/ready", () => Results.Text("ready\n", "text/plain"));
+// Readiness (пока будет тот же набор проверок)
+app.MapHealthChecks("/health/ready");
 
 app.Run();

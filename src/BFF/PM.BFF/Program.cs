@@ -24,7 +24,7 @@ var app = builder.Build();
 app.UseForwardedHeaders();
 
 // Liveness
-app.MapGet("/health", () => Results.Text("ok\n", "text/plain"));
+app.MapHealthChecks("/health");
 
 // Дальше появятся:
 // - cookie session + CSRF

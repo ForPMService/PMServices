@@ -1,11 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <PackageReference Include="OpenTelemetry.Extensions.Hosting" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.Http" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" />
-    <PackageReference Include="StackExchange.Redis" />
+    <!-- OpenTelemetry and Redis provided by PM.Platform.Infrastructure -->
   </ItemGroup>
 
   <ItemGroup>
